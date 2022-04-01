@@ -15,6 +15,7 @@ import { SiteService } from './services/site.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     BannerComponent,
     NavbarComponent,
-    ExploreComponent
+    ExploreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
