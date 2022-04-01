@@ -1,0 +1,153 @@
+@media (max-width: 768px)
+
+    .myPrev
+        left: 0.5em
+        display: none
+    .myNext
+        right: 0.5em
+        display: none
+
+    h1
+        font-size: 2em
+
+    .subtitle
+        span
+            font-size: 0.8em
+            padding: 0
+
+    #banner
+        padding-top: 48px !important
+        .banner-box
+            img
+                height: 200px
+
+    #navbar
+
+        .logo-box
+            width: 140px
+            height: 110px
+            img
+                width: 110px
+        .menu-box
+            .menu-ul
+                position: fixed
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                z-index: 3000
+                background: #4b4b4b
+                transition: 0.3s ease
+                transform: translateY(-100%)
+
+                &.active
+                    transform: translateY(0)
+
+                .close-icon
+                    color: white
+                    font-weight: bold
+                    font-size: 2em
+                    position: absolute
+                    right: 20px
+
+                ul
+                    flex-direction: column
+
+            .menu-icon
+                display: flex
+                color: white
+                font-weight: bold
+                font-size: 2em
+                display: flex
+                align-items: center
+                justify-content: center
+        
+    #decorados
+        .decorados-box
+            flex-wrap: wrap
+            .decorado-box
+                height: 80px
+                min-width: 100%
+                margin-bottom: 0.75em
+
+    #eventos
+        .eventos-box
+            flex-wrap: wrap
+            .evento-box
+                height: 80px
+                min-width: 100%
+                margin-bottom: 0.75em
+
+    #historia
+        .texto-video
+            justify-content: center
+            flex-wrap: wrap
+            &.reverse
+                flex-wrap: wrap-reverse
+            .texto-box
+                padding: 1em
+
+            video
+                width: 100%
+
+            iframe
+                width: 100%
+                height: auto
+
+
+    #lojas
+        .mapas-box
+            .enderecos
+                flex-wrap: wrap
+
+                .endereco
+                    padding: 1em 0.5em
+                    border-bottom: 1px solid $white
+
+
+    #agende 
+        .agende-box
+            flex-wrap: wrap
+
+            .agende-foto-box
+                display: none
+                img
+                    width: 100%
+
+            .agende-text-box
+                .agende-form
+                    flex-direction: column
+
+    #contato
+
+        .form-box
+            max-width: 100%
+
+            form
+                max-width: 100%
+
+    .dep-carousel
+        width: 100%
+
+        .depoimento-inner
+            flex-direction: column
+            text-align: center
+
+            img
+                margin-bottom: 1em
+
+    #galeria
+        .filters-box
+            display: none
+
+    #explore
+
+        .explore-item
+            grid-template-columns: auto
+
+            h4
+                margin-bottom: 10px
+                font-size: 1em
+
+            .btn-explore
+                justify-self: start

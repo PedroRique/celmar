@@ -1,0 +1,122 @@
+.loader-box
+    background: $verde
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 10000
+    transition: 0.4s ease
+    
+    &.some
+        transform: translateY(-100%)
+
+    .loader-content
+        padding: 2em
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+
+
+        img
+            width: 500px
+
+        .linha
+            background: $white
+            position: absolute
+            z-index: 10001
+
+        .linha1
+            width: 1px
+            animation: linha1 2s
+
+        .linha2
+            top: 0px
+            height: 0.5px
+            animation: linha2 2s
+
+        .linha3
+            left: 0px
+            width: 1px
+            height: 0px
+            top: 12.5%
+            align-self: flex-start
+            animation: linha3 2s ease 1s
+
+        .caixa
+            width: 100%
+            height: 100%
+            animation: caixa 2s ease 1s forwards
+            position: absolute
+            background: $verde
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(linha1)
+    0%
+        height: 0px
+        top: 0
+
+    50%
+        top: 100px
+        height: 200px
+
+    100%
+        top: 150px
+        height: 0px
+
+    
++keyframes(linha2)
+    0%
+        width: 0px
+        right: 0
+
+    50%
+        right: 100px
+        width: 200px
+
+    100%
+        right: 150px
+        width: 0px
+
+    
++keyframes(linha3)
+    0%
+        height: 0px
+
+    25%
+        height: 75%
+        left: 0px
+
+    90%  
+        height: 75%
+        left: 100%
+    
+    100%
+        left: 100%
+        height: 0px
+
++keyframes(caixa)
+    0%
+        transform: translateX(0)
+
+    25%
+        transform: translateX(0)
+
+    90%
+        transform: translateX(100%)
+
+    100%
+        transform: translateX(100%)

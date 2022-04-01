@@ -1,0 +1,75 @@
+#galeria
+    padding: 50px 0px !important
+    background: #4b4b4b //210661001496*
+    
+    .galeria-header
+        margin-bottom: 1em
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    .filters-box
+        display: none //flex
+        align-items: center
+        justify-content: center
+        
+        svg
+            fill: $white
+
+        .filter
+            border: none
+            background: none
+            color: white
+            outline: none
+            font-size: 1.5em
+            margin-left: 0.7em
+            border-bottom: 1px solid white
+
+            option
+                background: gray
+                outline: none
+
+    h1
+        color: white
+
+
+    .galeria-box
+        display: flex
+        max-height: 400px
+
+        .galeria-destaque
+            position: relative
+            
+            .foto-overlay
+                position: absolute
+                bottom: 20px
+                right: 50px
+
+                .foto-arrows
+                    background: black
+                    display: flex
+                    i
+                        font-size: 2em
+                        color: white
+                        padding: 0.3em
+                        transition: 0.3s ease
+                        cursor: pointer
+
+                        &:hover
+                            background: #333
+
+        .galeria-thumbs
+            overflow-y: scroll
+            display: flex
+            flex-wrap: wrap
+
+            .foto-box
+                padding: 0em 0em 1em 1em
+                cursor: pointer
+                transition: 0.3s
+
+                &:hover
+                    opacity: 0.8
+
+    img
+        width: 100%

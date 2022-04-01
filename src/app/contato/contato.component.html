@@ -1,0 +1,28 @@
+<div id="contato" class="container-fluid">
+  <div class="container">
+    <div class="form-box">
+        <h1 class="title t-center">FALE CONOSCO</h1>
+        <form action="" [formGroup]="contatoForm" (ngSubmit)="enviarEmail($event)">
+          <input type="text" name="nome" class="form-control" placeholder="Nome" formControlName="nome">
+          <input type="email" name="email" class="form-control" placeholder="E-mail" formControlName="email">
+          <input 
+              type="text"
+              name="telefone"
+              class="form-control"
+              placeholder="Telefone"
+              (keyup)="onPhoneChange($event)"
+              mask="{{phoneMask}}"
+              formControlName="telefone"
+          />
+          <input type="text" name="bairro" class="form-control" placeholder="Bairro" formControlName="bairro">
+          <textarea type="text" name="mensagem" class="form-control"  placeholder="Mensagem" formControlName="mensagem"></textarea>
+          <!-- <label class="btn btn-primary">
+            Anexe sua planta na mensagem
+            <input type="file" hidden name="anexo" formControlName="anexo" >
+          </label> -->
+          <!-- (change)="onFileChange($event)" -->
+          <button [disabled]="!contatoForm.valid" class="btn btn-primary" type="submit">ENVIAR</button>
+        </form>
+    </div>
+  </div>
+</div>

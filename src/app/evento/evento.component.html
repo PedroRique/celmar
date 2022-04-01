@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <div class="evento-banner">
+      
+  </div>
+  
+  <div class="container" id="evento">
+    
+    <div class="row">
+      <div class="col-12">
+        <h1 class="big-h1">{{evento.nome}}</h1>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+
+    <div style="margin-top: 25px;">
+      <video width="100%" height="auto" controls>
+        <source src="../../assets/images/eventos/morar-mais/morarmais.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>

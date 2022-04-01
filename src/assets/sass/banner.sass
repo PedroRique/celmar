@@ -1,0 +1,63 @@
+#banner
+    display: flex
+    align-items: center
+
+.banner-box
+    width: 100%
+    margin: 0 auto
+    display: block
+    position: relative
+    
+
+    img
+        width: 100%
+        height: calc(80vh - 50px)
+        object-fit: cover
+    
+.container.details
+    position: relative
+
+.banner-details
+    background: rgba(0,0,0,0.5)
+    width: 270px
+    height: 300px
+    z-index: 10
+    position: absolute
+    bottom: -50px
+    left: 50px
+    color: white
+    align-items: flex-end
+    display: flex
+    justify-content: flex-end
+    padding: 1em
+    flex-direction: column
+    
+    h3
+        font-size: 1.4em
+        text-transform: uppercase
+        font-weight: 600
+        margin-bottom: 0
+    p
+        font-weight: 100
+        text-transform: uppercase
+        margin-bottom: 0
+
+.myNext, .myPrev
+    background: none
+    -webkit-appearance: none
+    border: none
+    font-size: 3em
+    color: $black
+    position: absolute
+    z-index: 1
+    cursor: pointer
+    outline: none
+.myPrev
+    left: 2em
+.myNext
+    right: 2em
+.banner-slide
+    opacity: 0.8
+    transition: 0.3s ease
+    &.slick-active
+        opacity: 1

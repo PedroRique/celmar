@@ -1,0 +1,29 @@
+<div class="container-fluid" id="depoimentos">
+  <div class="container depoimentos">
+    <h1 class="title t-center">DEPOIMENTOS</h1>
+    <h3 class="subtitle t-center crossed-line"><span>nosso objetivo é a sua satisfação</span></h3>
+
+    <ngx-slick-carousel class="carousel dep-carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let dep of depoimentos" class="slide">
+          <div class="depoimento-inner">
+            <img src="../../assets/images/avatar.jpg">
+            <div>
+                <h1>{{dep.nome}}</h1>
+                <p>{{dep.texto}}</p>
+            </div>
+        </div>
+        </div>
+    </ngx-slick-carousel>
+
+    <div style="margin-top: 2em; display:none">
+      <button class="myPrev" (click)="slickModal.slickPrev()"><i class="fas fa-chevron-left"></i></button>
+      <button class="myNext" (click)="slickModal.slickNext()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>

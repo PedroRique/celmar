@@ -1,0 +1,15 @@
+<div class="container" id="eventos">
+  <h1 class="title t-center">EVENTOS</h1>
+  <h3 class="subtitle t-center crossed-line"><span>Veja nossos principais eventos</span></h3>
+
+  <div class="eventos-box">
+    <div class="evento-box" *ngFor="let evento of eventos" [ngStyle]="{'background-image': getBg(evento.id, evento.images)}" (click)="abreEvento(evento.id)">
+      <div class="veja-mais">
+        <h2>
+          Veja <br> Mais
+        </h2>
+      </div>
+      <h1>{{evento.nome}}</h1>
+    </div>
+  </div>
+</div>

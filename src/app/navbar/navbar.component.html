@@ -1,0 +1,24 @@
+<div class="container-fluid" id="navbar">
+	<div class="container">
+		<div class="menu-box">
+			<div class="logo-box">
+				<a href="#" routerLink="/">
+					<img src="../../assets/images/celmar70.png">
+				</a>
+			</div>
+			<div class="menu-ul" [ngClass]="{'active': isOpen}">
+				<!-- <i class="fas fa-menu"></i> -->
+				<span class="close-icon" (click)="isOpen = !isOpen">x</span>
+				<ul>
+					<li><a href="#historia" (click)="closeMenu()">História</a></li>
+					<li><a href="#galeria" (click)="closeMenu()">Galeria</a></li>
+					<li><a href="#lojas" (click)="closeMenu()">Lojas</a></li>
+					<li><a href="#contato" (click)="closeMenu()">Contato</a></li>
+				</ul>
+			</div>
+
+			<!-- <i class="fas fa-menu menu-icon"></i> -->
+			<span class="menu-icon" (click)="isOpen = !isOpen">...</span>
+		</div>
+	</div>
+</div>

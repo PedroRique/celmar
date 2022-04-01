@@ -1,0 +1,16 @@
+<div class="container" id="lojas">
+  <div class="mapas-box">
+    <h1 class="title t-center">CONHEÇA NOSSAS LOJAS</h1>
+    <!-- <h3 class="subtitle">Venha nos fazer uma visita e veja pessoalmente toda a qualidade Celmar e Predilecta Rio</h3> -->
+    <div class="enderecos">
+      <div class="endereco" *ngFor="let endereco of enderecos">
+          <h2><i class="fas fa-map-marker-alt"></i> {{endereco.filial}}</h2>
+          
+          <p>{{endereco.end}}</p>
+          <p>Tel: {{endereco.telefone}}</p>
+          <p>{{endereco.email}}</p>
+          <a href="{{endereco.link}}" target="_blank"><i class="fas fa-map-marked-alt"></i> Ver no mapa</a>
+      </div>
+    </div>
+  </div>
+</div>
