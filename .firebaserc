@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "celmarrio"
+  },
+  "targets": {
+    "celmarrio": {
+      "hosting": {
+        "celmar": [
+          "celmarrio"
+        ]
+      }
+    }
+  }
+}
