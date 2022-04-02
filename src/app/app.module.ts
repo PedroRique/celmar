@@ -22,6 +22,7 @@ import { DecoradosComponent } from './components/decorados/decorados.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { HistoriaComponent } from './components/historia/historia.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { EventosComponent } from './components/eventos/eventos.component';
     FooterComponent,
     DecoradosComponent,
     ModalComponent,
-    EventosComponent
+    EventosComponent,
+    HistoriaComponent
   ],
   imports: [
     CommonModule,
