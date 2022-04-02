@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 import { DecoradosComponent } from './components/decorados/decorados.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     ExploreComponent,
     FooterComponent,
     DecoradosComponent,
-    ModalComponent
+    ModalComponent,
+    EventosComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Decorado } from '../components/decorados/decorados.component';
+import { Evento } from '../components/eventos/eventos.component';
 
 declare var $: any;
 
@@ -128,7 +129,7 @@ export class SiteService {
     }
   ];
 
-  private eventos = [
+  private eventos: Evento[] = [
     {
       nome: 'Morar Mais',
       id: 'morar-mais',
