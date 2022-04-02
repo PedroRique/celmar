@@ -9,6 +9,7 @@ export interface Decorado {
   id: string;
   company: string;
   qtd: number;
+  qtdVideo?: number;
 }
 
 @Component({

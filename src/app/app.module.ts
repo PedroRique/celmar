@@ -20,7 +20,7 @@ import { EventEmitterService } from './services/event-emitter.service';
 import { CommonModule } from '@angular/common';
 import { DecoradosComponent } from './components/decorados/decorados.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NgxGalleryModule } from 'ngx-gallery-images-video';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { HistoriaComponent } from './components/historia/historia.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';

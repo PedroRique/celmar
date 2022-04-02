@@ -7,6 +7,7 @@ export interface Evento {
   nome: string;
   id: string;
   qtd: number;
+  qtdVideo?: boolean;
 }
 
 @Component({
