@@ -27,6 +27,8 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
 import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
 import { AgendeComponent } from './components/agende/agende.component';
 import { MapasComponent } from './components/mapas/mapas.component';
+import { ContatoComponent } from './components/contato/contato.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { MapasComponent } from './components/mapas/mapas.component';
     GaleriaComponent,
     DepoimentosComponent,
     AgendeComponent,
-    MapasComponent
+    MapasComponent,
+    ContatoComponent
   ],
   imports: [
     CommonModule,
@@ -56,6 +59,7 @@ import { MapasComponent } from './components/mapas/mapas.component';
     NgbModule,
     MatIconModule,
     MatButtonModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [SiteService, EventEmitterService],
