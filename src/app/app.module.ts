@@ -1,85 +1,66 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxGalleryModule } from 'ngx-gallery';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskModule } from 'ngx-mask';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DecoradosComponent } from './decorados/decorados.component';
 import { HomeComponent } from './home/home.component';
-import { HistoriaComponent } from './historia/historia.component';
-import { GaleriaComponent } from './galeria/galeria.component';
-import { DepoimentosComponent } from './depoimentos/depoimentos.component';
-import { AgendeComponent } from './agende/agende.component';
-import { FooterComponent } from './footer/footer.component';
-import { BannerComponent } from './banner/banner.component';
-import { DecoradoComponent } from './decorado/decorado.component';
-import { CelmarqComponent } from './celmarq/celmarq.component';
-import { MapasComponent } from './mapas/mapas.component';
-import { ContatoComponent } from './contato/contato.component';
-import { ComunicadoComponent } from './comunicado/comunicado.component';
 
-import { SiteService } from './site.service';
+import { BannerComponent } from './components/banner/banner.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ExploreComponent } from './components/explore/explore.component';
+import { environment } from '../environments/environment';
+import { SiteService } from './services/site.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './components/footer/footer.component';
+import { EventEmitterService } from './services/event-emitter.service';
+import { CommonModule } from '@angular/common';
+import { DecoradosComponent } from './components/decorados/decorados.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgxGalleryModule } from 'ngx-gallery-images-video';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { HistoriaComponent } from './components/historia/historia.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
+import { AgendeComponent } from './components/agende/agende.component';
+import { MapasComponent } from './components/mapas/mapas.component';
+import { ContatoComponent } from './components/contato/contato.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import 'hammerjs';
-import { LoaderComponent } from './loader/loader.component';
-import { ExploreComponent } from './explore/explore.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { EventoComponent } from './evento/evento.component';
-import { ModalComponent } from './modal/modal.component';
-import { EventEmitterService } from './event-emitter.service';
-import { firebaseConfig } from 'src/environments/environment';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'decorado/:id', component: DecoradoComponent },
-  { path: 'evento/:id', component: EventoComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    DecoradosComponent,
     HomeComponent,
+    BannerComponent,
+    NavbarComponent,
+    ExploreComponent,
+    FooterComponent,
+    DecoradosComponent,
+    ModalComponent,
+    EventosComponent,
     HistoriaComponent,
     GaleriaComponent,
     DepoimentosComponent,
     AgendeComponent,
-    FooterComponent,
-    BannerComponent,
-    DecoradoComponent,
-    CelmarqComponent,
     MapasComponent,
-    ContatoComponent,
-    LoaderComponent,
-    ExploreComponent,
-    EventosComponent,
-    EventoComponent,
-    ModalComponent,
-    ComunicadoComponent
+    ContatoComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    SlickCarouselModule,
-    HttpClientModule,
-    AngularSvgIconModule,
+    AppRoutingModule,
+    SwiperModule,
     NgxGalleryModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    MatIconModule,
+    MatButtonModule,
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(),
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled'
-    }),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [SiteService, EventEmitterService],
   bootstrap: [AppComponent]

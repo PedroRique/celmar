@@ -1,20 +1,80 @@
-@import 'assets/sass/variables'
-@import 'assets/sass/generic'
-@import 'assets/sass/navbar'
-@import 'assets/sass/historia'
-@import 'assets/sass/decorados'
-@import 'assets/sass/decorado'
-@import 'assets/sass/explore'
-@import 'assets/sass/eventos'
-@import 'assets/sass/evento'
-@import 'assets/sass/footer'
-@import 'assets/sass/agende'
-@import 'assets/sass/banner'
-@import 'assets/sass/galeria'
-@import 'assets/sass/depoimentos'
-@import 'assets/sass/mapas'
-@import 'assets/sass/contato'
-@import 'assets/sass/comunicado'
-@import 'assets/sass/modal-galeria'
-@import 'assets/sass/responsive'
-@import 'assets/sass/loader'
+@import 'swiper/css/'
+@import 'swiper/css/navigation'
+@import 'swiper/css/pagination'
+@import '~bootstrap/scss/bootstrap'
+@import './assets/sass/variables'
+
+body
+    font-family: "Segoe UI",Roboto
+    
+    &.scroll
+        overflow: initial
+
+a
+    color: $white
+    text-decoration: none
+
+.title
+    font-weight: 300
+    text-transform: uppercase
+    font-weight: bold
+
+.subtitle
+    font-weight: 300
+    color: $gray
+    text-transform: uppercase
+    position: relative
+
+    &.crossed-line
+        width: 100%
+        &:before
+            position: absolute
+            width: 100%
+            height: 1px
+            content: ''
+            left: 0
+            background: lighten($gray, 50)
+            top: 17px
+            z-index: 0
+
+    span
+        background: white
+        z-index: 1
+        position: relative
+        padding: 0px 20px
+
+.t-right
+    text-align: right
+
+.t-left
+    text-align: left
+
+.t-center
+    text-align: center
+
+.container-fluid
+    padding: 0 !important
+
+@media (max-width: 768px)
+    h1
+        font-size: 2em
+
+    .subtitle
+        span
+            font-size: 0.8em
+            padding: 0
+
+.ngx-gallery,
+ngx-gallery
+    display: inline-block
+    margin-bottom: 20px
+
+    .ngx-gallery-thumbnails
+        .ngx-gallery-thumbnail
+            border-color: transparent !important
+            &.ngx-gallery-active
+                border-color: $bege !important
+
+.mat-raised-button
+    font-family: "Segoe UI",Roboto
+    text-transform: uppercase

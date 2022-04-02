@@ -1,0 +1,39 @@
+@import '../../../assets/sass/variables'
+
+#depoimentos
+    padding: 80px 0px !important
+
+    .subtitle
+        margin-bottom: 2em
+
+    .depoimentos-swiper
+        --swiper-navigation-color: #2a2a2a
+        --swiper-pagination-color: #2a2a2a
+
+        .depoimento-inner
+            display: flex
+            align-items: center
+            width: 50%
+            margin: 0 auto
+            margin-bottom: 4em
+
+            h1
+                color: $bege
+                text-transform: uppercase
+                font-size: 1.5em
+            img
+                border-radius: 50%
+                width: 120px
+                margin-right: 1em
+            p
+                margin-bottom: 0
+
+
+@media (max-width: 768px)
+    #depoimentos
+        .depoimentos-swiper
+            .depoimento-inner
+                flex-direction: column
+
+                img
+                    margin-bottom: 1em
