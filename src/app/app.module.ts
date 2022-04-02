@@ -23,6 +23,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { HistoriaComponent } from './components/historia/historia.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HistoriaComponent } from './components/historia/historia.component';
     DecoradosComponent,
     ModalComponent,
     EventosComponent,
-    HistoriaComponent
+    HistoriaComponent,
+    GaleriaComponent
   ],
   imports: [
     CommonModule,

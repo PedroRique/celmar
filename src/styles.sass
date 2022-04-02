@@ -56,9 +56,16 @@ a
     padding: 0 !important
 
 
-.ngx-gallery
+.ngx-gallery,
+ngx-gallery
     display: inline-block
     margin-bottom: 20px
+
+    .ngx-gallery-thumbnails
+        .ngx-gallery-thumbnail
+            border-color: transparent !important
+            &.ngx-gallery-active
+                border-color: $bege !important
 
 .mat-raised-button
     font-family: "Segoe UI",Roboto
