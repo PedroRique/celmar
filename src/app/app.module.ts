@@ -16,6 +16,11 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
+import { EventEmitterService } from './services/event-emitter.service';
+import { CommonModule } from '@angular/common';
+import { DecoradosComponent } from './components/decorados/decorados.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 @NgModule({
@@ -25,19 +30,23 @@ import { FooterComponent } from './components/footer/footer.component';
     BannerComponent,
     NavbarComponent,
     ExploreComponent,
-    FooterComponent
+    FooterComponent,
+    DecoradosComponent,
+    ModalComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
+    NgxGalleryModule,
     BrowserAnimationsModule,
     NgbModule,
     MatIconModule,
     MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [SiteService],
+  providers: [SiteService, EventEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

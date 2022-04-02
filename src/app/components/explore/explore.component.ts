@@ -27,7 +27,6 @@ export class ExploreComponent implements OnInit {
 
   async getExplores() {
     this.explores = await this.service.getExplores();
-    console.log(this.explores);
   }
 
   public toggleShowNumber() {

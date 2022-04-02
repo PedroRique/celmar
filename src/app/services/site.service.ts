@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Decorado } from '../components/decorados/decorados.component';
 
 declare var $: any;
 
@@ -10,7 +11,7 @@ export class SiteService {
 
   constructor(private db: AngularFireDatabase) { }
 
-  private decorados = [
+  private decorados: Decorado[] = [
     {
       nome: 'Vivaz Magarça',
       id: 'vivaz-magarca',
@@ -141,7 +142,7 @@ export class SiteService {
       .catch(() => alert('Ocorreu um erro, tente novamente mais tarde.'));
   }
 
-  getDecorados() {
+  getDecorados(): Decorado[] {
     return this.decorados;
   }
 
