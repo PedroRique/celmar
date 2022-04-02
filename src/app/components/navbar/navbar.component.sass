@@ -55,3 +55,46 @@
                     padding: 2em
                     &:hover
                         color: $white
+
+
+@media (max-width: 768px)
+    #navbar
+
+        .logo-box
+            width: 140px
+            height: 110px
+            img
+                width: 110px
+        .menu-box
+            .menu-ul
+                position: fixed
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                z-index: 3000
+                background: #4b4b4b
+                transition: 0.3s ease
+                transform: translateY(-100%)
+
+                &.active
+                    transform: translateY(0)
+
+                .close-icon
+                    color: white
+                    font-weight: bold
+                    font-size: 2em
+                    position: absolute
+                    right: 20px
+
+                ul
+                    flex-direction: column
+
+            .menu-icon
+                display: flex
+                color: white
+                font-weight: bold
+                font-size: 2em
+                display: flex
+                align-items: center
+                justify-content: center

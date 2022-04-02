@@ -19,3 +19,20 @@
                 line-height: 2
                 font-weight: 300
                 font-size: 1.2em
+
+@media (max-width: 768px)
+    #historia
+        .texto-video
+            justify-content: center
+            flex-wrap: wrap
+            &.reverse
+                flex-wrap: wrap-reverse
+            .texto-box
+                padding: 1em
+
+            video
+                width: 100%
+
+            iframe
+                width: 100%
+                height: auto
