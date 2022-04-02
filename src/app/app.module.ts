@@ -26,6 +26,7 @@ import { HistoriaComponent } from './components/historia/historia.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
 import { AgendeComponent } from './components/agende/agende.component';
+import { MapasComponent } from './components/mapas/mapas.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AgendeComponent } from './components/agende/agende.component';
     HistoriaComponent,
     GaleriaComponent,
     DepoimentosComponent,
-    AgendeComponent
+    AgendeComponent,
+    MapasComponent
   ],
   imports: [
     CommonModule,
