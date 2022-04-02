@@ -25,6 +25,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { HistoriaComponent } from './components/historia/historia.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
+import { AgendeComponent } from './components/agende/agende.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { DepoimentosComponent } from './components/depoimentos/depoimentos.compo
     EventosComponent,
     HistoriaComponent,
     GaleriaComponent,
-    DepoimentosComponent
+    DepoimentosComponent,
+    AgendeComponent
   ],
   imports: [
     CommonModule,
