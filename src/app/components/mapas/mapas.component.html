@@ -3,12 +3,17 @@
     <h1 class="title t-center">CONHEÇA NOSSAS LOJAS</h1>
     <div class="enderecos">
       <div class="endereco" *ngFor="let endereco of enderecos">
-          <h2><mat-icon>location_on</mat-icon> {{endereco.filial}}</h2>
+          <h2>
+            <!-- <mat-icon>location_on</mat-icon> -->
+            {{endereco.filial}}
+          </h2>
           
           <p>{{endereco.endereco}}</p>
           <p>Tel: {{endereco.telefone}}</p>
           <p>{{endereco.email}}</p>
-          <a href="{{endereco.link}}" target="_blank"><mat-icon>map</mat-icon> Ver no mapa</a>
+          <a href="{{endereco.link}}" target="_blank">
+            <!-- <mat-icon>map</mat-icon> -->
+             Ver no mapa</a>
       </div>
     </div>
   </div>
