@@ -55,8 +55,13 @@ export class ModalComponent implements OnInit {
     this.images = images;
 
     setTimeout(() => {
+      this.showModal = true;
       this.imageSlider?.imageOnClick(0);
     },0);
+  }
+
+  onClose() {
+    this.showModal = false;
   }
 
 }
