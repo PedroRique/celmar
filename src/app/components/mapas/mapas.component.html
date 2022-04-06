@@ -4,7 +4,7 @@
     <div class="enderecos">
       <div class="endereco" *ngFor="let endereco of enderecos">
           <h2>
-            <!-- <mat-icon>location_on</mat-icon> -->
+            <i class="fas fa-map-marker-alt"></i>
             {{endereco.filial}}
           </h2>
           
@@ -12,7 +12,7 @@
           <p>Tel: {{endereco.telefone}}</p>
           <p>{{endereco.email}}</p>
           <a href="{{endereco.link}}" target="_blank">
-            <!-- <mat-icon>map</mat-icon> -->
+            <i class="fas fa-map-marked-alt"></i>
              Ver no mapa</a>
       </div>
     </div>

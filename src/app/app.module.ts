@@ -13,7 +13,6 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { environment } from '../environments/environment';
 import { SiteService } from './services/site.service';
 import { AngularFireModule } from '@angular/fire/compat';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventEmitterService } from './services/event-emitter.service';
@@ -58,7 +57,6 @@ import { NgImageSliderModule } from 'ng-image-slider';
     NgxGalleryModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
     NgImageSliderModule,
