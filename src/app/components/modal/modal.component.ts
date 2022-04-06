@@ -27,11 +27,15 @@ export class ModalComponent implements OnInit {
 
   openGallery(gallery: { type: string; id: any; }) {
     let g;
+    
     if(gallery.type == 'decorados') {
       g = this.service.getDecorado(gallery.id);
-    }else {
+    } else if (gallery.type === 'eventos') {
       g = this.service.getEvento(gallery.id);
+    } else {
+      g = this.service.getShowroom(gallery.id);
     }
+
     let images = [];
 
     if(g.qtdVideo) {

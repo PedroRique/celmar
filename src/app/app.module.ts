@@ -29,6 +29,7 @@ import { MapasComponent } from './components/mapas/mapas.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     DepoimentosComponent,
     AgendeComponent,
     MapasComponent,
-    ContatoComponent
+    ContatoComponent,
+    ShowroomsComponent
   ],
   imports: [
     CommonModule,

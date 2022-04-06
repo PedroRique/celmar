@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Decorado } from '../components/decorados/decorados.component';
 import { Evento } from '../components/eventos/eventos.component';
+import { Showroom } from '../components/showrooms/showrooms.component';
 
 declare var $: any;
 
@@ -11,6 +12,21 @@ declare var $: any;
 export class SiteService {
 
   constructor(private db: AngularFireDatabase) { }
+
+  private showrooms: Showroom[] = [
+    {
+      id: 'engenho-de-dentro',
+      nome: 'Engenho de Dentro',
+      qtd: 1,
+      qtdVideo: 1
+    },
+    {
+      id: 'predilecta',
+      nome: 'Predilecta',
+      qtd: 1,
+      qtdVideo: 1
+    },
+  ]
 
   private decorados: Decorado[] = [
     {
@@ -171,6 +187,14 @@ export class SiteService {
 
   getEvento(id: any) {
     return this.eventos.filter(e => e.id === id)[0];;
+  }
+
+  getShowrooms() {
+    return this.showrooms;
+  }
+
+  getShowroom(id: any) {
+    return this.showrooms.filter(e => e.id === id)[0];;
   }
 
   async getExplores() {
