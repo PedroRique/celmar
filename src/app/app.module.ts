@@ -29,6 +29,7 @@ import { AgendeComponent } from './components/agende/agende.component';
 import { MapasComponent } from './components/mapas/mapas.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
+    NgImageSliderModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [SiteService, EventEmitterService],
