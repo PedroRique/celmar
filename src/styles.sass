@@ -83,7 +83,13 @@ ngx-gallery
             .prev,
             .next
                 top: unset !important
-                bottom: 1.5em
+                bottom: 3em
+
+            @media (min-width: 768px)
+                .next
+                    right: 30px !important
+                .prev
+                    left: 30px !important
 
 .mat-raised-button
     font-family: "Segoe UI",Roboto

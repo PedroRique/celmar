@@ -30,6 +30,13 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Send Cooliving',
+      id: 'send',
+      company: 'WTorre',
+      qtd: 21,
+      qtdVideo: 5
+    },
+    {
       nome: 'Invert Barra',
       id: 'invert-barra',
       company: 'Gafisa',
