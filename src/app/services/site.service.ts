@@ -29,6 +29,18 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Invert Barra 3Q',
+      id: 'invert-barra-3q',
+      company: 'Gafisa',
+      qtd: 63,
+    },
+    {
+      nome: 'Invert Barra 4Q',
+      id: 'invert-barra-4q',
+      company: 'Gafisa',
+      qtd: 66,
+    },
+    {
       nome: 'East Side 2',
       id: 'east-side-2',
       company: 'Tegra',
@@ -40,13 +52,6 @@ export class SiteService {
       company: 'WTorre',
       qtd: 21,
       qtdVideo: 5,
-    },
-    {
-      nome: 'Invert Barra',
-      id: 'invert-barra',
-      company: 'Gafisa',
-      qtd: 1,
-      qtdVideo: 2,
     },
     {
       nome: 'We Sorocaba',
