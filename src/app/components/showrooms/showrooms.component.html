@@ -1,0 +1,13 @@
+<div class="container" id="showrooms">
+  <h1 class="title t-center">SHOWROOMS</h1>
+  <h3 class="subtitle t-center crossed-line"><span>Veja nossos showrooms</span></h3>
+
+  <div class="showrooms-box">
+    <div class="showroom-box" *ngFor="let showroom of showrooms" [ngStyle]="{'background-image': getBg(showroom.id)}" (click)="abreShowroom(showroom.id)">
+      <div class="veja-mais">
+        <h2>Veja <br> Mais</h2>
+      </div>
+      <h1>{{showroom.nome}}</h1>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,6 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { environment } from '../environments/environment';
 import { SiteService } from './services/site.service';
 import { AngularFireModule } from '@angular/fire/compat';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventEmitterService } from './services/event-emitter.service';
@@ -29,6 +28,8 @@ import { AgendeComponent } from './components/agende/agende.component';
 import { MapasComponent } from './components/mapas/mapas.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DepoimentosComponent,
     AgendeComponent,
     MapasComponent,
-    ContatoComponent
+    ContatoComponent,
+    ShowroomsComponent
   ],
   imports: [
     CommonModule,
@@ -57,9 +59,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxGalleryModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
+    NgImageSliderModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [SiteService, EventEmitterService],

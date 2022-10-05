@@ -1,17 +1,27 @@
 <div class="container" id="explore">
   <h1 class="title t-center">EXPLORE EM <span>3D</span></h1>
-  <h3 class="subtitle t-center crossed-line"><span>Visite nosso decorado sem sair de casa</span></h3>
+  <h3 class="subtitle t-center crossed-line">
+    <span>Visite nosso decorado sem sair de casa</span>
+  </h3>
 
-  <div class="explore-item" *ngFor="let explore of explores | slice:0:showNumber">
+  <div
+    class="explore-item"
+    *ngFor="let explore of explores | slice: 0:showNumber"
+  >
     <div class="explore-text">
-      <h2>{{explore.nome}}</h2>
-      <h4>{{explore.texto}}</h4>
+      <h2>{{ explore.nome }}</h2>
+      <h4>{{ explore.texto }}</h4>
+      <h4 class="explore-location" *ngIf="explore.endereco">
+        <i class="fas fa-map-marker-alt"></i> {{ explore.endereco }}
+      </h4>
     </div>
-    <a class="btn-explore" href="{{explore.link}}" target="_blank">
-      <mat-icon aria-hidden="false" aria-label="Explore">3d_rotation</mat-icon>
+    <a class="btn-explore" href="{{ explore.link }}" target="_blank">
+      <i class="fas fa-cube"></i>
       <h2>EXPLORE</h2>
     </a>
-  </div> 
+  </div>
 
-  <button mat-raised-button (click)="toggleShowNumber()">{{showNumber === explores.length ? 'Mostrar menos' : 'Mostrar mais'}}</button>
+  <button mat-raised-button (click)="toggleShowNumber()">
+    {{ showNumber === explores.length ? "Mostrar menos" : "Mostrar mais" }}
+  </button>
 </div>

@@ -9,24 +9,29 @@
         .enderecos
             display: flex
             flex-wrap: wrap
+            gap: 1em
+            justify-content: center
 
             .endereco
-                flex: 1
                 text-align: center
                 display: flex
                 flex-direction: column
                 align-items: center
-
+                background: white
+                border-radius: 8px
+                border: 1px solid #ededed
+                padding: 1em
+                width: 30%
+                @media (max-width: 1024px)  
+                    width: 45%
+                @media (max-width: 768px)
+                    width: 100%
                 h2
                     display: flex
                     align-items: center
                     font-size: 1.7em
                     color: #3d3d3d
                     margin-bottom: 1em 
-                    mat-icon
-                        width: 45px
-                        height: 45px
-                        font-size: 1.7em
                 p
                     margin-bottom: 0.5em
 
@@ -34,15 +39,5 @@
                     color: #007bff
                     display: flex
                     align-items: center
-                    mat-icon
-                        margin-right: 0.5em
-
-@media (max-width: 768px)
-    #lojas
-        .mapas-box
-            .enderecos
-                flex-wrap: wrap
-
-                .endereco
-                    padding: 1em 0.5em
-                    border-bottom: 1px solid $white
+                i
+                    margin-right: 0.5em

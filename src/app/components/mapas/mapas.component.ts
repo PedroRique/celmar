@@ -12,19 +12,18 @@ export interface Endereco {
 @Component({
   selector: 'app-mapas',
   templateUrl: './mapas.component.html',
-  styleUrls: ['./mapas.component.sass']
+  styleUrls: ['./mapas.component.sass'],
 })
 export class MapasComponent implements OnInit {
-
   public enderecos: Endereco[] = [];
 
-  constructor(private service: SiteService) { }
+  constructor(private service: SiteService) {}
 
   ngOnInit() {
-    this.getExplores();
+    this.getLojas();
   }
 
-  async getExplores() {
+  async getLojas() {
     this.enderecos = await this.service.getLojas();
   }
 }

@@ -1,5 +1,3 @@
-<div class="container-fluid" id="modal-galeria">
-    <ng-container *ngIf="galleryImages">
-        <ngx-gallery #gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-    </ng-container>
+<div class="container-fluid" id="modal-galeria" [ngClass]="{'show': showModal}">
+    <ng-image-slider #imageSlider [images]="images" [animationSpeed]="0.3" (lightboxClose)="onClose()"></ng-image-slider>
 </div>

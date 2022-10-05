@@ -75,6 +75,22 @@ ngx-gallery
             &.ngx-gallery-active
                 border-color: $bege !important
 
+.ng-image-fullscreen-view
+    z-index: 2000 !important
+
+    .lightbox-wrapper
+        .lightbox-div
+            .prev,
+            .next
+                top: unset !important
+                bottom: 3em
+
+            @media (min-width: 768px)
+                .next
+                    right: 30px !important
+                .prev
+                    left: 30px !important
+
 .mat-raised-button
     font-family: "Segoe UI",Roboto
     text-transform: uppercase
