@@ -29,6 +29,12 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Jardim da Barra',
+      id: 'jardim-da-barra',
+      company: 'Calçada / Montserrat',
+      qtd: 20,
+    },
+    {
       nome: 'Invert Barra 3Q',
       id: 'invert-barra-3q',
       company: 'Gafisa',
