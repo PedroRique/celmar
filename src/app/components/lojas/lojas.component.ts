@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { SiteService } from '../../services/site.service';
 
 export interface Endereco {
-  email: string;
+  empresa: string;
+  nome: string;
   endereco: string;
-  filial: string;
-  link: string;
   telefone: string;
+  email: string;
+  link: string;
 }
 
 @Component({

@@ -8,4 +8,12 @@ import { Endereco } from '../lojas.component';
 })
 export class LojaComponent {
   @Input() public endereco!: Endereco;
+
+  public openMap(link: string): void {
+    window.open(link);
+  }
+
+  public openPhotos(empresa: string, nome: string): void {
+    
+  }
 }
