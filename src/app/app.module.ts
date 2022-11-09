@@ -31,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { LojaComponent } from './components/lojas/loja/loja.component';
-
+import { SlugifyPipe } from './shared/pipes/slugify.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { LojaComponent } from './components/lojas/loja/loja.component';
     LojasComponent,
     LojaComponent,
     ContatoComponent,
-    ShowroomsComponent
+    ShowroomsComponent,
   ],
   imports: [
     CommonModule,
@@ -66,7 +66,7 @@ import { LojaComponent } from './components/lojas/loja/loja.component';
     NgImageSliderModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [SiteService, EventEmitterService],
-  bootstrap: [AppComponent]
+  providers: [SiteService, EventEmitterService, SlugifyPipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
