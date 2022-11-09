@@ -11,7 +11,8 @@
     <p><i class="fa fa-envelope"></i> {{ endereco.email }}</p>
     <div class="actions">
       <button (click)="openPhotos()">Ver fotos</button>
-      <button (click)="openMap(endereco.link)">Ver no mapa</button>
+      <button (click)="openMap(endereco.mapa)">Ver no mapa</button>
+      <button (click)="openMap(endereco.link)">Tour virtual</button>
     </div>
   </div>
 </div>
