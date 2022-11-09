@@ -25,7 +25,7 @@ import { HistoriaComponent } from './components/historia/historia.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
 import { AgendeComponent } from './components/agende/agende.component';
-import { MapasComponent } from './components/mapas/mapas.component';
+import { LojasComponent } from './components/lojas/lojas.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
@@ -47,7 +47,7 @@ import { ShowroomsComponent } from './components/showrooms/showrooms.component';
     GaleriaComponent,
     DepoimentosComponent,
     AgendeComponent,
-    MapasComponent,
+    LojasComponent,
     ContatoComponent,
     ShowroomsComponent
   ],
