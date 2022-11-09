@@ -1,0 +1,9 @@
+<div class="container" id="lojas">
+  <div class="lojas-box">
+    <h1 class="title t-center">CONHEÇA NOSSAS LOJAS</h1>
+    <div class="enderecos">
+      <app-loja *ngFor="let endereco of enderecos" [endereco]="endereco">
+      </app-loja>
+    </div>
+  </div>
+</div>

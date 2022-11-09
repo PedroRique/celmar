@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { SiteService } from '../../services/site.service';
 
 export interface Endereco {
-  email: string;
+  empresa: string;
+  nome: string;
   endereco: string;
-  filial: string;
-  link: string;
   telefone: string;
+  email: string;
+  link: string;
+  mapa: string;
 }
 
 @Component({
-  selector: 'app-mapas',
-  templateUrl: './mapas.component.html',
-  styleUrls: ['./mapas.component.sass'],
+  selector: 'app-lojas',
+  templateUrl: './lojas.component.html',
+  styleUrls: ['./lojas.component.sass'],
 })
-export class MapasComponent implements OnInit {
+export class LojasComponent implements OnInit {
   public enderecos: Endereco[] = [];
 
   constructor(private service: SiteService) {}

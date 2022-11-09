@@ -1,0 +1,24 @@
+@import '../../../assets/sass/variables'
+
+#lojas
+    padding: 4em 0em
+    .lojas-box
+        .title
+            margin-bottom: 2em
+            @media (max-width: 768px)
+                margin-bottom: 1em
+
+        .enderecos
+            display: flex
+            flex-wrap: wrap
+            gap: 2em
+            justify-content: center
+            @media (max-width: 768px)
+                gap: 0
+
+            app-loja
+                display: block
+                width: 100%
+                @media (max-width: 768px)
+                    &:not(:last-child)
+                        border-bottom: 1px solid #d1d1d1
