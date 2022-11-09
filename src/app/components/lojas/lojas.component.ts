@@ -8,6 +8,7 @@ export interface Endereco {
   telefone: string;
   email: string;
   link: string;
+  mapa: string;
 }
 
 @Component({
