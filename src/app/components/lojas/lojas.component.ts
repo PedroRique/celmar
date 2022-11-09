@@ -10,11 +10,11 @@ export interface Endereco {
 }
 
 @Component({
-  selector: 'app-mapas',
-  templateUrl: './mapas.component.html',
-  styleUrls: ['./mapas.component.sass'],
+  selector: 'app-lojas',
+  templateUrl: './lojas.component.html',
+  styleUrls: ['./lojas.component.sass'],
 })
-export class MapasComponent implements OnInit {
+export class LojasComponent implements OnInit {
   public enderecos: Endereco[] = [];
 
   constructor(private service: SiteService) {}
