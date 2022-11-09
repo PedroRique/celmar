@@ -14,21 +14,15 @@ export class SiteService {
 
   private showrooms: Showroom[] = [
     {
-      id: 'engenho-de-dentro',
-      nome: 'Engenho de Dentro',
-      qtd: 1,
-      qtdVideo: 1,
-    },
-    {
-      id: 'predilecta',
-      nome: 'Predilecta',
-      qtd: 1,
-      qtdVideo: 1,
-    },
-    {
       id: 'celmar-copacabana',
       nome: 'Celmar - Copacabana',
       qtd: 19,
+      qtdVideo: 0,
+    },
+    {
+      id: 'celmar-engenho-de-dentro',
+      nome: 'Celmar - Engenho de Dentro',
+      qtd: 16,
       qtdVideo: 0,
     },
   ];
