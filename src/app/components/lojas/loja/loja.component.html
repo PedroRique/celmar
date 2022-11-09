@@ -1,14 +1,14 @@
 <div class="loja-container">
-  <h2>
-    <i class="fas fa-map-marker-alt"></i>
-    {{ endereco.filial }}
-  </h2>
+  <h4>{{ endereco.empresa }}</h4>
+  <h1>
+    <b>{{ endereco.nome }}</b>
+  </h1>
 
-  <p>{{ endereco.endereco }}</p>
-  <p>Tel: {{ endereco.telefone }}</p>
-  <p>{{ endereco.email }}</p>
-  <a href="{{ endereco.link }}" target="_blank">
-    <i class="fas fa-map-marked-alt"></i>
-    Ver no mapa</a
-  >
+  <p><i class="fas fa-map-marker-alt"></i>{{ endereco.endereco }}</p>
+  <p><i class="fa fa-phone"></i> {{ endereco.telefone }}</p>
+  <p><i class="fa fa-envelope"></i> {{ endereco.email }}</p>
+  <div class="actions">
+    <button (click)="openPhotos(endereco.empresa, endereco.nome)">Ver fotos</button>
+    <button (click)="openMap(endereco.link)">Ver no mapa</button>
+  </div>
 </div>
