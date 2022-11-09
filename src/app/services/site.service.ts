@@ -33,6 +33,11 @@ export class SiteService {
       nome: 'Celmar - Jacarepaguá',
       qtd: 31,
     },
+    {
+      id: 'predilecta-engenho-de-dentro',
+      nome: 'Predilecta - Engenho de Dentro',
+      qtd: 15,
+    },
   ];
 
   private decorados: Decorado[] = [
