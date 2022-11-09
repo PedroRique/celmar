@@ -28,7 +28,6 @@
     "firebase": "^9.6.10",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "ng-image-slider": "^2.8.0",
     "ngx-gallery-images-video": "^3.0.2",
     "rxjs": "~7.5.0",
     "swiper": "^8.0.7",
