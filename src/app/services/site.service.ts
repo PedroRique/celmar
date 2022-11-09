@@ -25,6 +25,12 @@ export class SiteService {
       qtd: 1,
       qtdVideo: 1,
     },
+    {
+      id: 'celmar-copacabana',
+      nome: 'Celmar - Copacabana',
+      qtd: 19,
+      qtdVideo: 0,
+    },
   ];
 
   private decorados: Decorado[] = [

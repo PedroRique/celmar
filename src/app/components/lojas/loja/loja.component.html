@@ -1,14 +1,17 @@
 <div class="loja-container">
-  <h4>{{ endereco.empresa }}</h4>
-  <h1>
-    <b>{{ endereco.nome }}</b>
-  </h1>
+  <div class="loja-bg" [ngStyle]="{ 'background-image': getBg() }"></div>
+  <div class="loja-info">
+    <h4>{{ endereco.empresa }}</h4>
+    <h1>
+      <b>{{ endereco.nome }}</b>
+    </h1>
 
-  <p><i class="fas fa-map-marker-alt"></i>{{ endereco.endereco }}</p>
-  <p><i class="fa fa-phone"></i> {{ endereco.telefone }}</p>
-  <p><i class="fa fa-envelope"></i> {{ endereco.email }}</p>
-  <div class="actions">
-    <button (click)="openPhotos(endereco.empresa, endereco.nome)">Ver fotos</button>
-    <button (click)="openMap(endereco.link)">Ver no mapa</button>
+    <p><i class="fas fa-map-marker-alt"></i>{{ endereco.endereco }}</p>
+    <p><i class="fa fa-phone"></i> {{ endereco.telefone }}</p>
+    <p><i class="fa fa-envelope"></i> {{ endereco.email }}</p>
+    <div class="actions">
+      <button (click)="openPhotos()">Ver fotos</button>
+      <button (click)="openMap(endereco.link)">Ver no mapa</button>
+    </div>
   </div>
 </div>
