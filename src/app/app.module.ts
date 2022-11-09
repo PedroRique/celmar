@@ -30,6 +30,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
+import { LojaComponent } from './components/lojas/loja/loja.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ShowroomsComponent } from './components/showrooms/showrooms.component';
     DepoimentosComponent,
     AgendeComponent,
     LojasComponent,
+    LojaComponent,
     ContatoComponent,
     ShowroomsComponent
   ],
