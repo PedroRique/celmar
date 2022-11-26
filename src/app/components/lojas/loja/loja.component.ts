@@ -38,6 +38,7 @@ export class LojaComponent implements OnInit {
   public openCertificates(): void {
     this.dialog.open(CertificatesComponent, {
       data: this.lojaId,
+      autoFocus: false,
     });
   }
 

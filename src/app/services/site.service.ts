@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { lastValueFrom } from 'rxjs';
 import { Decorado } from '../components/decorados/decorados.component';
 import { Evento } from '../components/eventos/eventos.component';
 import { Showroom } from '../components/showrooms/showrooms.component';
+import { Certificate } from '../shared/models/certificate.model';
 
 declare var $: any;
 
@@ -10,7 +13,10 @@ declare var $: any;
   providedIn: 'root',
 })
 export class SiteService {
-  constructor(private db: AngularFireDatabase) {}
+  constructor(
+    private db: AngularFireDatabase,
+    private storage: AngularFireStorage
+  ) {}
 
   private showrooms: Showroom[] = [
     {
@@ -251,5 +257,27 @@ export class SiteService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async getCertificates(lojaId: string) {
+    let certificatesUrls: Certificate[] = [];
+
+    try {
+      let storageRef = this.storage.ref(`certificates/${lojaId}`);
+      const res = await lastValueFrom(storageRef.listAll());
+      for (let index = 0; index < res.items.length; index++) {
+        const ref = res.items[index];
+        const name = ref.name;
+        const url = await ref.getDownloadURL();
+        certificatesUrls.push({
+          name,
+          url,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
+    return certificatesUrls;
   }
 }
