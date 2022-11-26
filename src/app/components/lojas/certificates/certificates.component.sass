@@ -1,0 +1,39 @@
+@import '../../../../assets/sass/variables'
+
+.certificates-container
+    display: flex
+    flex-direction: column
+    min-width: 250px
+    gap: 1em
+
+    .certificates-title
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        h2
+            margin: 0
+        button 
+            transform: translate(20px, -20px)
+
+    .certificates
+        display: flex
+        flex-direction: column
+
+        a
+            color: $black
+            margin-bottom: 1em
+            &:hover
+                color: $bege
+
+            i
+                margin-right: 1em
+
+    .loading-certificates
+        display: flex
+        align-items: center
+        justify-content: center
+
+        span
+            padding-left: 1em
+            color: $gray

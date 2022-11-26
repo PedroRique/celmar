@@ -1,0 +1,46 @@
+@import '../../../../assets/sass/variables'
+
+.loja-container
+    display: flex
+    gap: 1em
+    @media (max-width: 768px)
+        gap: 0
+    .loja-bg
+        width: 180px
+        background-clip: content-box
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        @media (max-width: 768px)
+            display: none
+    .loja-info
+        display: flex
+        flex-direction: column
+        padding: 0 1em
+        @media (max-width: 768px)
+            width: 100%
+            padding: 2em
+
+        h4
+            margin: 0
+        h2
+            display: flex
+            align-items: center
+            font-size: 1.7em
+            color: #3d3d3d
+            margin-bottom: 1em
+        p
+            margin-bottom: 0.5em
+
+        i
+            margin-right: 0.5em
+
+        .actions
+            display: flex
+            gap: 1em
+            margin-top: 1em
+            @media (max-width: 768px)
+                flex-direction: column
+            button
+                border: none
+                padding: 0.5em 1em
