@@ -4,3 +4,14 @@
 .modal-body h4 {
   font-size: 1.1em;
 }
+.wpp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100000;
+}
+
+.wpp-button a img {
+  width: 75px;
+  height: 75px;
+}

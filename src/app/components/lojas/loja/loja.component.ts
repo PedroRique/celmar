@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Endereco } from '../lojas.component';
-import { SlugifyPipe } from '../../../shared/pipes/slugify.pipe';
+import { MatDialog } from '@angular/material/dialog';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
+import { SlugifyPipe } from '../../../shared/pipes/slugify.pipe';
+import { CertificatesComponent } from '../certificates/certificates.component';
+import { Endereco } from '../lojas.component';
 
 @Component({
   selector: 'app-loja',
@@ -15,7 +17,8 @@ export class LojaComponent implements OnInit {
 
   constructor(
     private slugifyPipe: SlugifyPipe,
-    private eventEmitterService: EventEmitterService
+    private eventEmitterService: EventEmitterService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +33,13 @@ export class LojaComponent implements OnInit {
 
   public openPhotos(): void {
     this.eventEmitterService.onOpenGallery(this.lojaId, 'showrooms');
+  }
+
+  public openCertificates(): void {
+    this.dialog.open(CertificatesComponent, {
+      data: this.lojaId,
+      autoFocus: false,
+    });
   }
 
   public getBg(): string {
