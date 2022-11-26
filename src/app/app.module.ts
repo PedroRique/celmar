@@ -10,6 +10,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgImageSliderModule } from 'ng-image-slider';
@@ -34,7 +36,6 @@ import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { EventEmitterService } from './services/event-emitter.service';
 import { SiteService } from './services/site.service';
 import { SlugifyPipe } from './shared/pipes/slugify.pipe';
-
 
 @NgModule({
   declarations: [
@@ -69,6 +70,8 @@ import { SlugifyPipe } from './shared/pipes/slugify.pipe';
     ReactiveFormsModule,
     NgImageSliderModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [SiteService, EventEmitterService, SlugifyPipe],

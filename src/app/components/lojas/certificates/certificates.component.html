@@ -1,3 +1,26 @@
 <div class="certificates-container">
-  <h4>Certificados {{data}}</h4>
+  <div mat-dialog-title class="certificates-title">
+    <h2>Certificados</h2>
+    <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+      <i class="fas fa-close"></i>
+    </button>
+  </div>
+
+  <ng-container *ngIf="certificates; else loading">
+    <div class="certificates">
+      <a *ngFor="let cert of certificates" [href]="cert.url" target="_blank">
+        <i class="fas fa-file-pdf-o"></i>{{ cert.name }}</a>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading-certificates">
+      <mat-progress-spinner
+        color="primary"
+        mode="indeterminate"
+        diameter="24"
+      ></mat-progress-spinner>
+      <span>Carregando certificados...</span>
+    </div>
+  </ng-template>
 </div>
