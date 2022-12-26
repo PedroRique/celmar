@@ -13,7 +13,7 @@
   },
   "hosting": {
     "target": "celmar",
-    "public": "dist/celmar",
+    "public": "dist",
     "ignore": [
       "**/.*"
     ],
