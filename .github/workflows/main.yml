@@ -22,18 +22,18 @@ jobs:
         with:
           name: deploy_dist
           path: dist
-  ftp-deploy:
-    needs: build
+  web-deploy:
+    needs: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifacts created at previous job
+      - name: 🚚 Get latest code
         if: success()
         uses: actions/download-artifact@v1
         with:
           name: deploy_dist
           path: dist
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Actions@master
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
