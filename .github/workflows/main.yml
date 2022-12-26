@@ -15,7 +15,7 @@ jobs:
       - name: Install packages with NPM
         run: npm install
       - name: Build for production
-        run: npm run build -- --prod
+        run: npm run build
       - name: Upload artifacts to be used in next job
         if: success()
         uses: actions/upload-artifact@v1
