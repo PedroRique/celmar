@@ -23,7 +23,7 @@ jobs:
           name: deploy_dist
           path: dist
   web-deploy:
-    needs: 🎉 Deploy
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
