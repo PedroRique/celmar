@@ -207,6 +207,11 @@ export class SiteService {
       id: 'morar-mais',
       qtd: 45,
     },
+    {
+      nome: 'Flutuante Urca',
+      id: 'flutuante-urca',
+      qtd: 98,
+    },
   ];
 
   enviarEmail(values: any) {
