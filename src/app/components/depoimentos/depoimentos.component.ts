@@ -26,6 +26,7 @@ export class DepoimentosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

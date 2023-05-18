@@ -1,30 +1,40 @@
 <div class="container-fluid" id="depoimentos">
-  <div class="container depoimentos">
-    <h1 class="title t-center">DEPOIMENTOS</h1>
-    <h3 class="subtitle t-center crossed-line"><span>nosso principal objetivo é a sua satisfação</span></h3>
-
-    <!-- <ngx-slick-carousel class="carousel dep-carousel" 
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let dep of depoimentos" class="slide">
-          
+  <div class="container">
+    <div class="dep-title">
+      <h1 class="title t-center">DEPOIMENTOS</h1>
+      <h3 class="subtitle t-center">nosso principal <b>objetivo</b> é a sua <b>satisfação</b></h3>
+    </div>
+    <div class="depoimentos">
+      <div class="dep-video">
+        <div class="dep-video-inner">
+          <video width="270" height="480" poster="../../assets/videos/dep-ana-botafogo.jpeg" controls>
+            <source src="../../assets/videos/dep-ana-botafogo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h5>Veja o que a <b>Ana Botafogo</b> falou sobre nós...</h5>
         </div>
-    </ngx-slick-carousel> -->
 
-    <swiper [config]="config" class="depoimentos-swiper">
-        <ng-template swiperSlide *ngFor="let dep of depoimentos">
-          <div class="depoimento-inner">
-            <img src="../../assets/images/avatar.jpg">
-            <div>
-                <h1>{{dep.nome}}</h1>
-                <p>{{dep.texto}}</p>
-            </div>
-          </div>
-        </ng-template>
-    </swiper>
+        <div class="line-div"></div>
+      </div>
+  
+      <div>
+        <div class="dep-title-2">
+          <h1 class="title">DEPOIMENTOS</h1>
+          <h3 class="subtitle">nosso principal <b>objetivo</b> é a sua <b>satisfação</b></h3>
+        </div>
+        <swiper [config]="config" class="depoimentos-swiper">
+            <ng-template swiperSlide *ngFor="let dep of depoimentos">
+              <div class="depoimento-inner">
+                <img src="../../assets/images/avatar.jpg">
+                <div>
+                    <h1>{{dep.nome}}</h1>
+                    <p>{{dep.texto}}</p>
+                </div>
+              </div>
+            </ng-template>
+        </swiper>
+      </div>
+    </div>
+    
   </div>
 </div>

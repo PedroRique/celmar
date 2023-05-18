@@ -2,6 +2,33 @@
 
 #depoimentos
     padding: 80px 0px !important
+    .dep-title
+        display: none
+    .dep-title-2
+        display: block
+    .depoimentos
+        display: flex
+        align-items: center
+        justify-content: space-around
+        .dep-video
+            display: flex
+            align-items: center
+            justify-content: center
+            .dep-video-inner
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+            h5
+                font-weight: 300
+                font-style: italic
+                margin-top: 1em
+            .line-div
+                margin-left: 3em
+                margin-right: 3em
+                width: 1px
+                align-self: stretch
+                background: #e6e6e6
 
     .subtitle
         margin-bottom: 2em
@@ -12,10 +39,8 @@
 
         .depoimento-inner
             display: flex
-            align-items: center
-            width: 50%
+            flex-direction: column
             margin: 0 auto
-            margin-bottom: 4em
 
             h1
                 color: $bege
@@ -24,16 +49,19 @@
             img
                 border-radius: 50%
                 width: 120px
-                margin-right: 1em
+                margin-bottom: 1em
             p
                 margin-bottom: 0
 
-
 @media (max-width: 768px)
     #depoimentos
-        .depoimentos-swiper
-            .depoimento-inner
-                flex-direction: column
-
-                img
-                    margin-bottom: 1em
+        .dep-title
+            display: block
+        .dep-title-2
+            display: none
+        .depoimentos
+            flex-direction: column
+            .dep-video
+                margin-bottom: 4em
+                .line-div
+                    display: none
