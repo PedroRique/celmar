@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { lastValueFrom } from 'rxjs';
 import { Decorado } from '../components/decorados/decorados.component';
-import { Evento } from '../components/eventos/eventos.component';
+import { Event } from '../components/eventos/eventos.component';
 import { Showroom } from '../components/showrooms/showrooms.component';
 import { Certificate } from '../shared/models/certificate.model';
 
@@ -201,16 +201,19 @@ export class SiteService {
     },
   ];
 
-  private eventos: Evento[] = [
+  private eventos: Event[] = [
     {
       nome: 'Morar Mais',
       id: 'morar-mais',
       qtd: 45,
+      description: 'Evento 2019',
     },
     {
       nome: 'Flutuante Urca',
       id: 'flutuante-urca',
       qtd: 98,
+      description:
+        'Almoço Comemorativo do Resultado de 2022, com os arquitetos parceiros.',
     },
   ];
 
