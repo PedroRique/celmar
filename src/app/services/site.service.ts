@@ -82,7 +82,7 @@ export class SiteService {
       nome: 'We Sorocaba',
       id: 'we-sorocaba',
       company: 'Gafisa',
-      qtd: 1,
+      qtd: 42,
       qtdVideo: 1,
     },
     {
