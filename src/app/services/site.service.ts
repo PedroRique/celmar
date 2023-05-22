@@ -206,7 +206,7 @@ export class SiteService {
       nome: 'Morar Mais',
       id: 'morar-mais',
       qtd: 45,
-      description: 'Amostra Morar Mais por Menos 2019',
+      description: 'Mostra de decoração Morar Mais por Menos 2019',
     },
     {
       nome: 'Flutuante Urca',
