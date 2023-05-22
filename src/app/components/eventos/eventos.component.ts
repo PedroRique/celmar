@@ -1,37 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteService } from '../../services/site.service';
-import { Router } from '@angular/router';
 import { EventEmitterService } from '../../services/event-emitter.service';
+import { SiteService } from '../../services/site.service';
 
-export interface Evento {
+export interface Event {
   nome: string;
   id: string;
   qtd: number;
   qtdVideo?: boolean;
+  description?: string;
 }
 
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.sass']
+  styleUrls: ['./eventos.component.sass'],
 })
 export class EventosComponent implements OnInit {
+  public events: Event[] = [];
 
-  public eventos: Evento[] = [];
-
-  constructor(public service: SiteService, private router: Router, private eventEmitterService: EventEmitterService) {
-    this.eventos = this.service.getEventos();
+  constructor(
+    public service: SiteService,
+    private eventEmitterService: EventEmitterService
+  ) {
+    this.events = this.service.getEventos();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  getBg(id: string){
+  getBg(id: string) {
     return `url(../../assets/images/eventos/${id}/1.jpg)`;
   }
 
-  abreEvento(id: string){
+  abreEvento(id: string) {
     this.eventEmitterService.onOpenGallery(id, 'eventos');
   }
-
 }
