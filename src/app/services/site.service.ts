@@ -215,6 +215,13 @@ export class SiteService {
       description:
         'Almoço Comemorativo do Resultado de 2022, com os arquitetos parceiros.',
     },
+    {
+      nome: 'Casa Cor SP 2023',
+      id: 'casa-cor-2023',
+      qtd: 17,
+      description:
+        'Evento no Casa Cor SP 2023.',
+    },
   ];
 
   enviarEmail(values: any) {
