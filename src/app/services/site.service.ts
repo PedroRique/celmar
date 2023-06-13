@@ -48,6 +48,12 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Life 360°',
+      id: 'life-360',
+      company: 'Calçada / Montserrat',
+      qtd: 34,
+    },
+    {
       nome: 'Jardim da Barra',
       id: 'jardim-da-barra',
       company: 'Calçada / Montserrat',
