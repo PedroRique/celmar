@@ -48,6 +48,12 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Like',
+      id: 'like',
+      company: 'Rjz Cyrela / Living',
+      qtd: 14,
+    },
+    {
       nome: 'Kauai',
       id: 'kauai',
       company: 'Calçada / Montserrat',
