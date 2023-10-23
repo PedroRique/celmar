@@ -9,7 +9,7 @@ SwiperCore.use([Navigation, Pagination, A11y]);
   styleUrls: ['./banner.component.sass']
 })
 export class BannerComponent implements OnInit {
-  public banners = ['banner2', 'dorm', 'show','office'];
+  public banners = ['banner2', 'dorm', 'office'];
 
   public config: SwiperOptions = {
     slidesPerView: 1,
