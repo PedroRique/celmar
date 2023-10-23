@@ -48,6 +48,24 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Only by Living - Klabin - 2 Quartos',
+      id: 'only-klabin-2q',
+      company: 'Rjz Cyrela / Living / Vivaz',
+      qtd: 13,
+    },
+    {
+      nome: 'Only by Living - Klabin - 3 Quartos',
+      id: 'only-klabin-3q',
+      company: 'Rjz Cyrela / Living / Vivaz',
+      qtd: 15,
+    },
+    {
+      nome: 'Only by Living - Klabin - 4 Quartos',
+      id: 'only-klabin-4q',
+      company: 'Rjz Cyrela / Living / Vivaz',
+      qtd: 17,
+    },
+    {
       nome: 'Like',
       id: 'like',
       company: 'Rjz Cyrela / Living',
