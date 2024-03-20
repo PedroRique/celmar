@@ -48,6 +48,12 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Conquista Itanhanga Green',
+      id: 'conquista-itanhanga-green',
+      company: 'Direcional',
+      qtd: 12,
+    },
+    {
       nome: 'Only by Living - Klabin - 2 Quartos',
       id: 'only-klabin-2q',
       company: 'Rjz Cyrela / Living / Vivaz',
