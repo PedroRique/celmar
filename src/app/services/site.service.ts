@@ -20,8 +20,8 @@ export class SiteService {
 
   private showrooms: Showroom[] = [
     {
-      id: 'celmar-copacabana',
-      nome: 'Celmar - Copacabana',
+      id: 'predilecta-copacabana',
+      nome: 'Predilecta - Copacabana',
       qtd: 19,
     },
     {
@@ -30,13 +30,13 @@ export class SiteService {
       qtd: 16,
     },
     {
-      id: 'celmar-recreio',
-      nome: 'Celmar - Recreio',
+      id: 'predilecta-recreio',
+      nome: 'Predilecta - Recreio',
       qtd: 17,
     },
     {
-      id: 'celmar-jacarepagua',
-      nome: 'Celmar - Jacarepaguá',
+      id: 'predilecta-jacarepagua',
+      nome: 'Predilecta - Jacarepaguá',
       qtd: 31,
     },
     {
