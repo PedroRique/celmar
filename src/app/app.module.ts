@@ -36,6 +36,7 @@ import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { EventEmitterService } from './services/event-emitter.service';
 import { SiteService } from './services/site.service';
 import { SlugifyPipe } from './shared/pipes/slugify.pipe';
+import { CasesComponent } from './components/cases/cases.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SlugifyPipe } from './shared/pipes/slugify.pipe';
     DecoradosComponent,
     ModalComponent,
     EventosComponent,
+    CasesComponent,
     HistoriaComponent,
     GaleriaComponent,
     DepoimentosComponent,

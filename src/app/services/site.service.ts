@@ -6,6 +6,7 @@ import { Decorado } from '../components/decorados/decorados.component';
 import { Event } from '../components/eventos/eventos.component';
 import { Showroom } from '../components/showrooms/showrooms.component';
 import { Certificate } from '../shared/models/certificate.model';
+import { Case } from '../components/cases/cases.component';
 
 declare var $: any;
 
@@ -272,6 +273,15 @@ export class SiteService {
     },
   ];
 
+  private cases: Case[] = [
+    {
+      nome: 'Cliente Flávio',
+      id: 'flavio',
+      qtd: 34,
+      qtdVideo: 0,
+    },
+  ];
+
   enviarEmail(values: any) {
     this.db
       .list('contatos')
@@ -292,8 +302,16 @@ export class SiteService {
     return this.eventos;
   }
 
+  getCases() {
+    return this.cases;
+  }
+
   getEvento(id: any) {
     return this.eventos.filter((e) => e.id === id)[0];
+  }
+
+  getCase(id: any) {
+    return this.cases.filter((e) => e.id === id)[0];
   }
 
   getShowrooms() {

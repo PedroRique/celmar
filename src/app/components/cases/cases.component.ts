@@ -2,36 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { SiteService } from '../../services/site.service';
 
-export interface Event {
+export interface Case {
   nome: string;
   id: string;
   qtd: number;
   qtdVideo?: number;
-  description?: string;
 }
 
 @Component({
-  selector: 'app-eventos',
-  templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.sass'],
+  selector: 'app-cases',
+  templateUrl: './cases.component.html',
+  styleUrls: ['./cases.component.sass'],
 })
-export class EventosComponent implements OnInit {
-  public events: Event[] = [];
+export class CasesComponent implements OnInit {
+  public cases: Case[] = [];
 
   constructor(
     public service: SiteService,
     private eventEmitterService: EventEmitterService
   ) {
-    this.events = this.service.getEventos();
+    this.cases = this.service.getCases();
   }
 
   ngOnInit() {}
 
   getBg(id: string) {
-    return `url(../../assets/images/eventos/${id}/1.jpg)`;
+    return `url(../../assets/images/cases/${id}/1.jpg)`;
   }
 
-  abreEvento(id: string) {
-    this.eventEmitterService.onOpenGallery(id, 'eventos');
+  abreCase(id: string) {
+    this.eventEmitterService.onOpenGallery(id, 'cases');
   }
 }

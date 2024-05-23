@@ -10,28 +10,30 @@ import { NgImageSliderComponent } from 'ng-image-slider';
 })
 export class ModalComponent implements OnInit {
   @ViewChild('imageSlider') imageSlider: NgImageSliderComponent | undefined;
-  
+
   public showModal = false;
   public images: Array<object> = [];
 
   constructor(public service: SiteService, private eventEmitterService: EventEmitterService) { }
 
-  ngOnInit() {    
-    if (this.eventEmitterService.subsVar==undefined) {    
-      this.eventEmitterService.subsVar = this.eventEmitterService.    
-      invokeGallery.subscribe((gallery) => {    
+  ngOnInit() {
+    if (this.eventEmitterService.subsVar==undefined) {
+      this.eventEmitterService.subsVar = this.eventEmitterService.
+      invokeGallery.subscribe((gallery) => {
         this.openGallery(gallery);
-      });    
+      });
     }
-  }  
+  }
 
   openGallery(gallery: { type: string; id: any; }) {
     let g;
-    
+
     if(gallery.type == 'decorados') {
       g = this.service.getDecorado(gallery.id);
     } else if (gallery.type === 'eventos') {
       g = this.service.getEvento(gallery.id);
+    } else if (gallery.type === 'cases') {
+      g = this.service.getCase(gallery.id);
     } else {
       g = this.service.getShowroom(gallery.id);
     }
@@ -45,7 +47,7 @@ export class ModalComponent implements OnInit {
         images.push(obj);
       }
     }
-    
+
     for(let i = 1; i <= g.qtd; i++) {
       let imgStr = 'assets/images/' + gallery.type + '/' + g.id + '/' + i + '.jpg';
       let obj = { image: imgStr, thumbImage: imgStr }
