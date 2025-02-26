@@ -37,6 +37,7 @@ import { EventEmitterService } from './services/event-emitter.service';
 import { SiteService } from './services/site.service';
 import { SlugifyPipe } from './shared/pipes/slugify.pipe';
 import { CasesComponent } from './components/cases/cases.component';
+import { EntrevistaComponent } from './components/entrevista/entrevista.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CasesComponent } from './components/cases/cases.component';
     HomeComponent,
     BannerComponent,
     NavbarComponent,
+    EntrevistaComponent,
     ExploreComponent,
     FooterComponent,
     DecoradosComponent,

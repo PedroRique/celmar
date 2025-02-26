@@ -49,6 +49,18 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'Vivaz Geremário',
+      id: 'vivaz-geremario',
+      company: 'Rjz Cyrela / Living / Vivaz',
+      qtd: 13,
+    },
+    {
+      nome: 'Vivaz Metropolitano',
+      id: 'vivaz-metropolitano',
+      company: 'Rjz Cyrela / Living / Vivaz',
+      qtd: 14,
+    },
+    {
       nome: 'Conquista Itanhanga Green',
       id: 'conquista-itanhanga-green',
       company: 'Direcional',
@@ -245,6 +257,12 @@ export class SiteService {
   ];
 
   private eventos: Event[] = [
+    {
+      nome: 'Morar Mais 2024',
+      id: '2024-morar-mais',
+      qtd: 10,
+      description: 'Mostra de decoração Morar Mais por Menos 2024',
+    },
     {
       nome: 'Morar Mais 2023',
       id: '2023-morar-mais',

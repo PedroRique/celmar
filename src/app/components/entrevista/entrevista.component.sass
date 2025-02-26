@@ -1,0 +1,39 @@
+@import '../../../assets/sass/variables'
+
+#entrevista
+    background: $black
+    color: $white
+    padding: 50px 0px !important
+
+    .texto-video
+        display: flex
+        align-items: center
+
+        .texto-box
+            padding: 2em
+
+            h1
+                margin-bottom: 1em
+                color: #d5a67a
+            p
+                margin: 0
+                line-height: 2
+                font-weight: 300
+                font-size: 1.2em
+
+@media (max-width: 768px)
+    #entrevista
+        .texto-video
+            justify-content: center
+            flex-wrap: wrap
+            &.reverse
+                flex-wrap: wrap-reverse
+            .texto-box
+                padding: 1em
+
+            video
+                width: 100%
+
+            iframe
+                width: 100%
+                height: auto
