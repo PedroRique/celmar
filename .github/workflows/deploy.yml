@@ -30,12 +30,12 @@ jobs:
       run: |
         npm run build --prod  # ou 'ng build --prod' se preferir usar o CLI do Angular diretamente
 
-    # Passo 5: Deploy via FTP
+    # Passo 5: Deploy via FTP usando a ação SamKirkland/FTP-Deploy-Action
     - name: Deploy to FTP Server
-      uses: ftp-deploy/action@v2
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.celmarrio.com.br
         username: ${{ secrets.FTP_USERNAME }}  # Usando variável secreta
         password: ${{ secrets.FTP_PASSWORD }}  # Usando variável secreta
         local-dir: ./dist/  # Pasta do build gerado do Angular
-        remote-dir: /public_html  # Pasta no servidor onde os arquivos serão enviados
+        server-dir: Web/test/  # Pasta no servidor onde os arquivos serão enviados
