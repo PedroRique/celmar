@@ -38,4 +38,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}  # Usando variável secreta
         password: ${{ secrets.FTP_PASSWORD }}  # Usando variável secreta
         local-dir: ./dist/  # Pasta do build gerado do Angular
-        server-dir: Web/  # Pasta no servidor onde os arquivos serão enviados
+        server-dir: /Web/  # Pasta no servidor onde os arquivos serão enviados
+        log-level: verbose
