@@ -3,7 +3,7 @@ name: Deploy Angular via FTP
 on:
   push:
     branches:
-      - main
+      - main  # ou a branch que você estiver usando para produção
 
 jobs:
   build:
@@ -32,10 +32,10 @@ jobs:
 
     # Passo 5: Deploy via FTP
     - name: Deploy to FTP Server
-      uses: appleboy/ftp-action@v1.0.0
+      uses: ftp-deploy/action@v2
       with:
-        host: ftp.celmarrio.com.br
+        server: ftp.celmarrio.com.br
         username: ${{ secrets.FTP_USERNAME }}  # Usando variável secreta
         password: ${{ secrets.FTP_PASSWORD }}  # Usando variável secreta
         local-dir: ./dist/  # Pasta do build gerado do Angular
-        remote-dir: /Web/test  # Pasta no servidor onde os arquivos serão enviados
+        remote-dir: /public_html  # Pasta no servidor onde os arquivos serão enviados
