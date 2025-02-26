@@ -1,0 +1,41 @@
+name: Deploy Angular via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Passo 1: Checar o código
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Passo 2: Configurar o Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # ou a versão de Node.js que você estiver usando
+
+    # Passo 3: Instalar as dependências
+    - name: Install dependencies
+      run: |
+        npm install
+
+    # Passo 4: Build do Angular
+    - name: Build Angular project
+      run: |
+        npm run build --prod  # ou 'ng build --prod' se preferir usar o CLI do Angular diretamente
+
+    # Passo 5: Deploy via FTP
+    - name: Deploy to FTP Server
+      uses: appleboy/ftp-action@v1.0.0
+      with:
+        host: ftp.celmarrio.com.br
+        username: ${{ secrets.FTP_USERNAME }}  # Usando variável secreta
+        password: ${{ secrets.FTP_PASSWORD }}  # Usando variável secreta
+        local-dir: ./dist/  # Pasta do build gerado do Angular
+        remote-dir: /Web/test  # Pasta no servidor onde os arquivos serão enviados
