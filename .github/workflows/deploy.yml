@@ -41,4 +41,5 @@ jobs:
         server-dir: Web/  # Pasta no servidor onde os arquivos serão enviados
         log-level: verbose
         dangerous-clean-slate: false
-        exclude: "assets/**"
+        exclude: |
+          **/celmar/**
