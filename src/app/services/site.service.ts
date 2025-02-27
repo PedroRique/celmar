@@ -258,9 +258,9 @@ export class SiteService {
 
   private eventos: Event[] = [
     {
-      nome: 'Morar Mais 2024.',
+      nome: 'Morar Mais 2024',
       id: '2024-morar-mais',
-      qtd: 11,
+      qtd: 10,
       description: 'Mostra de decoração Morar Mais por Menos 2024',
     },
     {
