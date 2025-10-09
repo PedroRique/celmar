@@ -1,7 +1,7 @@
 {
-  "appTitle": "Celmar Rio",
-  "logoUrl": "assets/brands/celmarrio.com.br/logo.svg",
-  "faviconUrl": "assets/brands/celmarrio.com.br/favicon.png",
+  "appTitle": "Celmar",
+  "logoUrl": "assets/brands/celmarrio/images/celmar73.jpg",
+  "faviconUrl": "assets/brands/celmarrio/favicon.png",
   "theme": {
     "--brand-primary": "#14532d",
     "--brand-bg": "#ffffff"

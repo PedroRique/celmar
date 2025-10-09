@@ -3,7 +3,7 @@
 		<div class="menu-box">
 			<div class="logo-box">
 				<a href="#" routerLink="/">
-					<img src="../../assets/images/celmar73.jpg">
+					<img [src]="brandingService.branding.logoUrl">
 				</a>
 			</div>
 			<div class="menu-ul" [ngClass]="{'active': isOpen}">

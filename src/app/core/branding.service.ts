@@ -26,14 +26,14 @@ export class BrandingService {
 
     // 🗺️ Mapeamento de domínios
     const map: Record<string, string> = {
-      'celmarrio.com.br': 'celmarrio.com.br',
-      'grupopredilectario.com.br': 'grupopredilectario.com.br',
       'localhost': 'default',
       '127.0.0.1': 'default',
-      'celmarrio.local': 'celmarrio.com.br',
-      'grupopredilectario.local': 'grupopredilectario.com.br',
-      'celmarrio.localhost': 'celmarrio.com.br',
-      'grupopredilectario.localhost': 'grupopredilectario.com.br',
+      'celmarrio.com.br': 'celmarrio',
+      'celmarrio.local': 'celmarrio',
+      'celmarrio.localhost': 'celmarrio',
+      'grupopredilectario.com.br': 'grupopredilectario',
+      'grupopredilectario.local': 'grupopredilectario',
+      'grupopredilectario.localhost': 'grupopredilectario',
     };
 
     const key = map[host] ?? 'default';
