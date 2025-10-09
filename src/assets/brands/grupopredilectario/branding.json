@@ -1,0 +1,9 @@
+{
+  "appTitle": "Predilecta Rio",
+  "logoUrl": "assets/brands/grupopredilectario.com.br/logo.svg",
+  "faviconUrl": "assets/brands/grupopredilectario.com.br/favicon.png",
+  "theme": {
+    "--brand-primary": "#14532d",
+    "--brand-bg": "#ffffff"
+  }
+}
