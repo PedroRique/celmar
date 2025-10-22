@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { SwiperModule } from 'swiper/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { NgxGalleryModule } from 'ngx-gallery-images-video';
 import { environment } from '../environments/environment';
+
 import { AgendeComponent } from './components/agende/agende.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ContatoComponent } from './components/contato/contato.component';
@@ -39,46 +40,71 @@ import { SlugifyPipe } from './shared/pipes/slugify.pipe';
 import { CasesComponent } from './components/cases/cases.component';
 import { EntrevistaComponent } from './components/entrevista/entrevista.component';
 
+// ⬇️ BrandingService
+import { BrandingService } from './core/branding.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SafeUrlPipe } from './shared/safe-url.pipe';
+
+// ⬇️ Função para carregar o branding antes de iniciar o app
+export function initBranding(brandingService: BrandingService) {
+return () => brandingService.load();
+}
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    BannerComponent,
-    NavbarComponent,
-    EntrevistaComponent,
-    ExploreComponent,
-    FooterComponent,
-    DecoradosComponent,
-    ModalComponent,
-    EventosComponent,
-    CasesComponent,
-    HistoriaComponent,
-    GaleriaComponent,
-    DepoimentosComponent,
-    AgendeComponent,
-    LojasComponent,
-    LojaComponent,
-    CertificatesComponent,
-    ContatoComponent,
-    ShowroomsComponent,
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    SwiperModule,
-    NgxGalleryModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    NgImageSliderModule,
-    MatDialogModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    AngularFireModule.initializeApp(environment.firebase),
-  ],
-  providers: [SiteService, EventEmitterService, SlugifyPipe],
-  bootstrap: [AppComponent],
+declarations: [
+AppComponent,
+HomeComponent,
+BannerComponent,
+NavbarComponent,
+EntrevistaComponent,
+ExploreComponent,
+FooterComponent,
+DecoradosComponent,
+ModalComponent,
+EventosComponent,
+CasesComponent,
+HistoriaComponent,
+GaleriaComponent,
+DepoimentosComponent,
+AgendeComponent,
+LojasComponent,
+LojaComponent,
+CertificatesComponent,
+ContatoComponent,
+ShowroomsComponent,
+SafeUrlPipe
+],
+imports: [
+CommonModule,
+BrowserModule,
+AppRoutingModule,
+SwiperModule,
+NgxGalleryModule,
+BrowserAnimationsModule,
+NgbModule,
+MatButtonModule,
+ReactiveFormsModule,
+NgImageSliderModule,
+MatDialogModule,
+MatProgressSpinnerModule,
+MatIconModule,
+AngularFireModule.initializeApp(environment.firebase),
+HttpClientModule
+],
+providers: [
+SiteService,
+EventEmitterService,
+SlugifyPipe,
+Title,
+Meta,
+BrandingService, // ✅ garante que esteja disponível para APP_INITIALIZER
+{
+provide: APP_INITIALIZER,
+useFactory: initBranding,
+deps: [BrandingService],
+multi: true
+}
+],
+bootstrap: [AppComponent]
 })
 export class AppModule {}

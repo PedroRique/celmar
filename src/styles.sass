@@ -2,95 +2,103 @@
 @import 'swiper/css/navigation'
 @import 'swiper/css/pagination'
 @import '~bootstrap/scss/bootstrap'
-@import './assets/sass/variables'
+
+// 🎨 Variáveis CSS padrão (sobrescritas dinamicamente pelo BrandingService)
+:root
+  --brand-bg: #ffffff
+  --brand-text: #000000
+  --brand-subtitle: #666666
+  --brand-highlight: #c49a6c
+  --brand-link: #ffffff
 
 body
-    font-family: "Segoe UI",Roboto
-    
-    &.scroll
-        overflow: initial
+  font-family: "Segoe UI", Roboto
+  background-color: var(--brand-bg)
+  color: var(--brand-text)
+
+  &.scroll
+    overflow: initial
 
 a
-    color: $white
-    text-decoration: none
+  color: var(--brand-link)
+  text-decoration: none
 
 .title
-    font-weight: 300
-    text-transform: uppercase
-    font-weight: bold
+  font-weight: bold
+  text-transform: uppercase
 
 .subtitle
-    font-weight: 300
-    color: $gray
-    text-transform: uppercase
+  font-weight: 300
+  color: var(--brand-subtitle)
+  text-transform: uppercase
+  position: relative
+
+  &.crossed-line
+    width: 100%
+    &:before
+      position: absolute
+      width: 100%
+      height: 1px
+      content: ''
+      left: 0
+      background: rgba(102, 102, 102, 0.3) // aproximação de lighten($gray, 50)
+      top: 17px
+      z-index: 0
+
+  span
+    background: white
+    z-index: 1
     position: relative
-
-    &.crossed-line
-        width: 100%
-        &:before
-            position: absolute
-            width: 100%
-            height: 1px
-            content: ''
-            left: 0
-            background: lighten($gray, 50)
-            top: 17px
-            z-index: 0
-
-    span
-        background: white
-        z-index: 1
-        position: relative
-        padding: 0px 20px
+    padding: 0px 20px
 
 .t-right
-    text-align: right
+  text-align: right
 
 .t-left
-    text-align: left
+  text-align: left
 
 .t-center
-    text-align: center
+  text-align: center
 
 .container-fluid
-    padding: 0 !important
+  padding: 0 !important
 
 @media (max-width: 768px)
-    h1
-        font-size: 2em
+  h1
+    font-size: 2em
 
-    .subtitle
-        span
-            font-size: 0.8em
-            padding: 0
+  .subtitle
+    span
+      font-size: 0.8em
+      padding: 0
 
 .ngx-gallery,
 ngx-gallery
-    display: inline-block
-    margin-bottom: 20px
+  display: inline-block
+  margin-bottom: 20px
 
-    .ngx-gallery-thumbnails
-        .ngx-gallery-thumbnail
-            border-color: transparent !important
-            &.ngx-gallery-active
-                border-color: $bege !important
+  .ngx-gallery-thumbnails
+    .ngx-gallery-thumbnail
+      border-color: transparent !important
+      &.ngx-gallery-active
+        border-color: var(--brand-highlight) !important
 
 .ng-image-fullscreen-view
-    z-index: 2000 !important
+  z-index: 2000 !important
 
-    .lightbox-wrapper
-        .lightbox-div
-            .prev,
-            .next
-                top: unset !important
-                bottom: 3em
+  .lightbox-wrapper
+    .lightbox-div
+      .prev,
+      .next
+        top: unset !important
+        bottom: 3em
 
-            @media (min-width: 768px)
-                .next
-                    right: 30px !important
-                .prev
-                    left: 30px !important
+      @media (min-width: 768px)
+        .next
+          right: 30px !important
+        .prev
+          left: 30px !important
 
 .mat-raised-button
-    font-family: "Segoe UI",Roboto
-    text-transform: uppercase
+  font-family: "Segoe UI", Roboto
+  text-transform: uppercase

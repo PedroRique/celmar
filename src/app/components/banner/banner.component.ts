@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import SwiperCore, { Navigation, Pagination, A11y, SwiperOptions } from 'swiper';
+import { BrandingService } from 'src/app/core/branding.service';
 
 SwiperCore.use([Navigation, Pagination, A11y]);
 
@@ -9,7 +10,7 @@ SwiperCore.use([Navigation, Pagination, A11y]);
   styleUrls: ['./banner.component.sass']
 })
 export class BannerComponent implements OnInit {
-  public banners = ['banner2', 'dorm', 'office'];
+  public banners: string[] = [];
 
   public config: SwiperOptions = {
     slidesPerView: 1,
@@ -18,7 +19,9 @@ export class BannerComponent implements OnInit {
     pagination: { clickable: true },
   };
 
-  constructor() { }
+  constructor(private brandingService: BrandingService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.banners = this.brandingService.banners;
+  }
 }

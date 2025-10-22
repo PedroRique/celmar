@@ -1,0 +1,13 @@
+{
+  "appTitle": "Celmar",
+  "logoUrl": "assets/brands/celmarrio/images/celmar73.jpg",
+  "faviconUrl": "assets/brands/celmarrio/favicon.png",
+  "historia": "Inaugurada em 1950 como Marcenaria Sarzedas, a Celmar começou sua história em um pequeno porão de uma antiga casa no centro da cidade de São Paulo. Nos anos 60 a trajetória de sucesso inicia-se com a mudança da produção para uma área de aproximadamente mil metros quadrados e o abertura de novas lojas na cidade de São Paulo.",
+  "show70Anos": true,
+  "historiaVideoUrl": "https://www.youtube.com/embed/M3mf_e5GQz0?rel=0&showinfo=0",
+  "banners": ["assets/brands/celmarrio/images/banner1.jpg", "assets/brands/celmarrio/images/banner2.jpg", "assets/brands/celmarrio/images/banner3.jpg"],
+  "theme": {
+    "--brand-primary": "#14532d",
+    "--brand-bg": "#ffffff"
+  }
+}
