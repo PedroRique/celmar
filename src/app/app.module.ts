@@ -43,6 +43,7 @@ import { EntrevistaComponent } from './components/entrevista/entrevista.componen
 // ⬇️ BrandingService
 import { BrandingService } from './core/branding.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SafeUrlPipe } from './shared/safe-url.pipe';
 
 // ⬇️ Função para carregar o branding antes de iniciar o app
 export function initBranding(brandingService: BrandingService) {
@@ -70,7 +71,8 @@ LojasComponent,
 LojaComponent,
 CertificatesComponent,
 ContatoComponent,
-ShowroomsComponent
+ShowroomsComponent,
+SafeUrlPipe
 ],
 imports: [
 CommonModule,
