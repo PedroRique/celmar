@@ -1,110 +1,123 @@
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule, Title, Meta } from '@angular/platform-browser';
-import { SwiperModule } from 'swiper/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 
-import { CommonModule } from '@angular/common';
-import { AngularFireModule } from '@angular/fire/compat';
+import { SwiperModule } from 'swiper/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { NgxGalleryModule } from 'ngx-gallery-images-video';
-import { environment } from '../environments/environment';
 
-import { AgendeComponent } from './components/agende/agende.component';
+// Components
+import { HomeComponent } from './home/home.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ContatoComponent } from './components/contato/contato.component';
-import { DecoradosComponent } from './components/decorados/decorados.component';
-import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
-import { EventosComponent } from './components/eventos/eventos.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { EntrevistaComponent } from './components/entrevista/entrevista.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { GaleriaComponent } from './components/galeria/galeria.component';
-import { HistoriaComponent } from './components/historia/historia.component';
-import { CertificatesComponent } from './components/lojas/certificates/certificates.component';
-import { LojaComponent } from './components/lojas/loja/loja.component';
-import { LojasComponent } from './components/lojas/lojas.component';
+import { DecoradosComponent } from './components/decorados/decorados.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { CasesComponent } from './components/cases/cases.component';
+import { HistoriaComponent } from './components/historia/historia.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { DepoimentosComponent } from './components/depoimentos/depoimentos.component';
+import { AgendeComponent } from './components/agende/agende.component';
+import { LojasComponent } from './components/lojas/lojas.component';
+import { LojaComponent } from './components/lojas/loja/loja.component';
+import { CertificatesComponent } from './components/lojas/certificates/certificates.component';
+import { ContatoComponent } from './components/contato/contato.component';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
+
+// Pipes & Services
+import { SafeUrlPipe } from './shared/safe-url.pipe';
+import { SlugifyPipe } from './shared/pipes/slugify.pipe';
 import { EventEmitterService } from './services/event-emitter.service';
 import { SiteService } from './services/site.service';
-import { SlugifyPipe } from './shared/pipes/slugify.pipe';
-import { CasesComponent } from './components/cases/cases.component';
-import { EntrevistaComponent } from './components/entrevista/entrevista.component';
 
-// ⬇️ BrandingService
+// Branding
 import { BrandingService } from './core/branding.service';
-import { HttpClientModule } from '@angular/common/http';
-import { SafeUrlPipe } from './shared/safe-url.pipe';
 
-// ⬇️ Função para carregar o branding antes de iniciar o app
+// APP_INITIALIZER to load branding
 export function initBranding(brandingService: BrandingService) {
-return () => brandingService.load();
+  return () => brandingService.load();
 }
 
 @NgModule({
-declarations: [
-AppComponent,
-HomeComponent,
-BannerComponent,
-NavbarComponent,
-EntrevistaComponent,
-ExploreComponent,
-FooterComponent,
-DecoradosComponent,
-ModalComponent,
-EventosComponent,
-CasesComponent,
-HistoriaComponent,
-GaleriaComponent,
-DepoimentosComponent,
-AgendeComponent,
-LojasComponent,
-LojaComponent,
-CertificatesComponent,
-ContatoComponent,
-ShowroomsComponent,
-SafeUrlPipe
-],
-imports: [
-CommonModule,
-BrowserModule,
-AppRoutingModule,
-SwiperModule,
-NgxGalleryModule,
-BrowserAnimationsModule,
-NgbModule,
-MatButtonModule,
-ReactiveFormsModule,
-NgImageSliderModule,
-MatDialogModule,
-MatProgressSpinnerModule,
-MatIconModule,
-AngularFireModule.initializeApp(environment.firebase),
-HttpClientModule
-],
-providers: [
-SiteService,
-EventEmitterService,
-SlugifyPipe,
-Title,
-Meta,
-BrandingService, // ✅ garante que esteja disponível para APP_INITIALIZER
-{
-provide: APP_INITIALIZER,
-useFactory: initBranding,
-deps: [BrandingService],
-multi: true
-}
-],
-bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    BannerComponent,
+    NavbarComponent,
+    EntrevistaComponent,
+    ExploreComponent,
+    FooterComponent,
+    DecoradosComponent,
+    ModalComponent,
+    EventosComponent,
+    CasesComponent,
+    HistoriaComponent,
+    GaleriaComponent,
+    DepoimentosComponent,
+    AgendeComponent,
+    LojasComponent,
+    LojaComponent,
+    CertificatesComponent,
+    ContatoComponent,
+    ShowroomsComponent,
+    SafeUrlPipe
+  ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    HttpClientModule,
+    AppRoutingModule,
+
+    // UI libs
+    BrowserAnimationsModule,
+    SwiperModule,
+    NgbModule,
+
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+
+    NgImageSliderModule,
+    NgxGalleryModule,
+
+    // Firebase
+    AngularFireModule.initializeApp(environment.firebase),
+  ],
+  providers: [
+    SiteService,
+    EventEmitterService,
+    SlugifyPipe,
+    Title,
+    Meta,
+    BrandingService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initBranding,
+      deps: [BrandingService],
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

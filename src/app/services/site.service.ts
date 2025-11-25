@@ -258,36 +258,46 @@ export class SiteService {
 
   private eventos: Event[] = [
     {
+      nome: 'Morar Mais 2025',
+      id: '2025-morar-mais',
+      qtd: 20,
+      description: 'Mostra de decoração Morar Mais por Menos 2025 - Cozinha Afetiva',
+      empresas: ['predilecta'],
+    },
+    {
       nome: 'Morar Mais 2024',
       id: '2024-morar-mais',
       qtd: 10,
       description: 'Mostra de decoração Morar Mais por Menos 2024',
+      empresas: ['celmar', 'predilecta'],
     },
     {
       nome: 'Morar Mais 2023',
       id: '2023-morar-mais',
       qtd: 20,
       description: 'Mostra de decoração Morar Mais por Menos 2023',
+      empresas: ['celmar', 'predilecta'],
     },
     {
       nome: 'Morar Mais',
       id: 'morar-mais',
       qtd: 45,
       description: 'Mostra de decoração Morar Mais por Menos 2019',
+      empresas: ['celmar', 'predilecta'],
     },
     {
       nome: 'Flutuante Urca',
       id: 'flutuante-urca',
       qtd: 98,
-      description:
-        'Almoço Comemorativo do Resultado de 2022, com os arquitetos parceiros.',
+      description: 'Almoço Comemorativo do Resultado de 2022 com os arquitetos parceiros',
+      empresas: ['celmar', 'predilecta'],
     },
     {
       nome: 'Casa Cor SP 2023',
       id: 'casa-cor-2023',
       qtd: 17,
-      description:
-        'Evento no Casa Cor SP 2023.',
+      description: 'Evento no Casa Cor SP 2023',
+      empresas: ['celmar', 'predilecta'],
     },
   ];
 

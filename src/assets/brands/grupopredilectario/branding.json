@@ -7,7 +7,17 @@
   "historiaVideoUrl": "https://www.youtube.com/embed/gWny6D48C14?rel=0&showinfo=0",
   "banners": ["assets/brands/grupopredilectario/images/banner1.jpg"],
   "theme": {
-    "--brand-primary": "#14532d",
-    "--brand-bg": "#ffffff"
+    "--brand-primary": "#000000",
+    "--brand-bg": "#ffffff",
+    "--historia-bg": "#523F1E",
+    "--historia-text": "#ffffff",
+    "--galeria-bg": "#E6B012",
+    "--galeria-text": "#000000",
+    "--navbar-bg": "rgba(82,63,30,0.9)",
+    "--entrevista-bg": "#E6B012",
+    "--entrevista-title": "#000000",
+    "--entrevista-text": "#000000",
+    "--footer-bg": "#523F1E",
+    "--footer-text": "#ffffff"
   }
 }

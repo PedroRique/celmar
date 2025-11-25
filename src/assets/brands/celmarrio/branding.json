@@ -8,6 +8,16 @@
   "banners": ["assets/brands/celmarrio/images/banner1.jpg", "assets/brands/celmarrio/images/banner2.jpg", "assets/brands/celmarrio/images/banner3.jpg"],
   "theme": {
     "--brand-primary": "#14532d",
-    "--brand-bg": "#ffffff"
+    "--brand-bg": "#ffffff",
+    "--historia-bg": "#2a2a2a",
+    "--historia-text": "#ffffff",
+    "--galeria-bg": "#4b4b4b",
+    "--galeria-text": "#ffffff",
+    "--navbar-bg": "rgba(0,0,0,0.8)",
+    "--entrevista-bg": "#4b4b4b",
+    "--entrevista-title": "#d5a67a",
+    "--entrevista-text": "#ffffff",
+    "--footer-bg": "#4b4b4b",
+    "--footer-text": "#ffffff"
   }
 }
