@@ -1,8 +1,8 @@
 @import '../../../assets/sass/variables'
 
 #historia
-    background: $black
-    color: $white
+    background: var(--historia-bg)
+    color: var(--historia-text)
     padding: 50px 0px !important
 
     .texto-video
@@ -14,6 +14,7 @@
 
             h1
                 margin-bottom: 1em
+
             p
                 margin: 0
                 line-height: 2
@@ -25,8 +26,10 @@
         .texto-video
             justify-content: center
             flex-wrap: wrap
+
             &.reverse
                 flex-wrap: wrap-reverse
+
             .texto-box
                 padding: 1em
 
