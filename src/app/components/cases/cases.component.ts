@@ -7,6 +7,7 @@ export interface Case {
   id: string;
   qtd: number;
   qtdVideo?: number;
+  description?: string;
 }
 
 @Component({

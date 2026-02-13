@@ -17,8 +17,9 @@
             Mais
           </h2>
         </div>
-        <h1></h1>
+        <h1>{{ case.nome }}</h1>
       </div>
+      <p *ngIf="case.description" class="case-description">{{ case.description }}</p>
     </div>
   </div>
 </div>
