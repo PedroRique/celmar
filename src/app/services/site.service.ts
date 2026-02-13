@@ -23,7 +23,7 @@ export class SiteService {
     {
       id: 'predilecta-copacabana',
       nome: 'Predilecta - Copacabana',
-      qtd: 19,
+      qtd: 17,
     },
     {
       id: 'celmar-engenho-de-dentro',
@@ -48,6 +48,12 @@ export class SiteService {
   ];
 
   private decorados: Decorado[] = [
+    {
+      nome: 'Living Wellness - Light',
+      id: 'living-wellness-light',
+      company: 'Rjz Cyrela / Living',
+      qtd: 19,
+    },
     {
       nome: 'Vivaz Geremário',
       id: 'vivaz-geremario',
@@ -258,6 +264,13 @@ export class SiteService {
 
   private eventos: Event[] = [
     {
+      nome: 'Almoço com Arquitetos e Parceiros',
+      id: 'almoco-ilha-da-gigoia',
+      qtd: 48,
+      description: 'Almoço com arquitetos e parceiros - Ilha da Gigóia',
+      empresas: ['celmar', 'predilecta'],
+    },
+    {
       nome: 'Morar Mais 2025',
       id: '2025-morar-mais',
       qtd: 20,
@@ -303,10 +316,32 @@ export class SiteService {
 
   private cases: Case[] = [
     {
-      nome: 'Cliente Flávio',
-      id: 'flavio',
+      nome: '',
+      id: 'decorado-arquiteta-andrea-riccio',
       qtd: 34,
+      qtdVideo: 1,
+      description: 'Apartamento realizado com a parceria Arquiteta Andrea Riccio',
+    },
+    {
+      nome: '',
+      id: 'decorado-tegra-peninsula',
+      qtd: 26,
       qtdVideo: 0,
+      description: 'Decorado Tegra Península',
+    },
+    {
+      nome: '',
+      id: 'apartamento-nilton-montarroyos',
+      qtd: 4,
+      qtdVideo: 1,
+      description: 'Apartamento do Arquiteto Nilton Montarroyos',
+    },
+    {
+      nome: '',
+      id: 'clinica-abgref',
+      qtd: 4,
+      qtdVideo: 0,
+      description: 'Clínica ABGREF - Ginecologia Regenerativa',
     },
   ];
 
