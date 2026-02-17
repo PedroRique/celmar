@@ -8,6 +8,7 @@ export interface Case {
   qtd: number;
   qtdVideo?: number;
   description?: string;
+  videoUrls?: string[];
 }
 
 @Component({
