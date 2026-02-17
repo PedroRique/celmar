@@ -321,6 +321,7 @@ export class SiteService {
       qtd: 34,
       qtdVideo: 1,
       description: 'Apartamento realizado com a parceria Arquiteta Andrea Riccio',
+      videoUrls: ['https://www.youtube.com/embed/msBu-j4uw4E?si=SOcIojilQSk-a9Rs'],
     },
     {
       nome: '',
@@ -335,6 +336,7 @@ export class SiteService {
       qtd: 4,
       qtdVideo: 1,
       description: 'Apartamento do Arquiteto Nilton Montarroyos',
+      videoUrls: ['https://www.youtube.com/embed/Ob_hcm3P2cc?si=5XArRqagQ6HmZRbO'],
     },
     {
       nome: '',

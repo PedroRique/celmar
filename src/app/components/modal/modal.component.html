@@ -1,3 +1,11 @@
 <div class="container-fluid" id="modal-galeria" [ngClass]="{'show': showModal}">
-    <ng-image-slider #imageSlider [images]="images" [animationSpeed]="0.3" [videoAutoPlay]="true" [showVideoControls]="true" (lightboxClose)="onClose()"></ng-image-slider>
+    <!-- Galeria de imagens/vídeos/YouTube -->
+    <ng-image-slider 
+        #imageSlider 
+        [images]="images" 
+        [animationSpeed]="0.3" 
+        [videoAutoPlay]="true" 
+        [showVideoControls]="true" 
+        (lightboxClose)="onClose()">
+    </ng-image-slider>
 </div>
