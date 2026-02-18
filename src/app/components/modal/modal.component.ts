@@ -91,7 +91,18 @@ export class ModalComponent implements OnInit, OnDestroy {
     const images: any[] = [];
     this.mediaItems = [];
 
-    // Adiciona vídeos do YouTube (se existirem)
+    // Adiciona imagens PRIMEIRO (carregam rápido)
+    for (let i = 1; i <= g.qtd; i++) {
+      const imgStr = `assets/images/${gallery.type}/${g.id}/${i}.jpg`;
+      images.push({ image: imgStr, thumbImage: imgStr });
+      this.mediaItems.push({
+        type: 'image',
+        url: imgStr,
+        thumbUrl: imgStr
+      });
+    }
+
+    // Adiciona vídeos do YouTube depois (se existirem)
     if (g.videoUrls && g.videoUrls.length > 0) {
       for (const videoUrl of g.videoUrls) {
         if (this.isYoutubeUrl(videoUrl)) {
@@ -118,7 +129,7 @@ export class ModalComponent implements OnInit, OnDestroy {
       }
     }
 
-    // Adiciona vídeos locais (compatibilidade com formato anterior)
+    // Adiciona vídeos locais depois (compatibilidade com formato anterior)
     if (g.qtdVideo && !g.videoUrls) {
       for (let i = 1; i <= g.qtdVideo; i++) {
         const vidStr = `assets/videos/${gallery.type}/${g.id}/${i}.mp4`;
@@ -128,17 +139,6 @@ export class ModalComponent implements OnInit, OnDestroy {
           url: vidStr
         });
       }
-    }
-
-    // Adiciona imagens
-    for (let i = 1; i <= g.qtd; i++) {
-      const imgStr = `assets/images/${gallery.type}/${g.id}/${i}.jpg`;
-      images.push({ image: imgStr, thumbImage: imgStr });
-      this.mediaItems.push({
-        type: 'image',
-        url: imgStr,
-        thumbUrl: imgStr
-      });
     }
 
     this.images = images;
