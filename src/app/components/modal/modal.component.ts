@@ -1,4 +1,14 @@
-import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { SiteService } from '../../services/site.service';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { NgImageSliderComponent } from 'ng-image-slider';
@@ -28,8 +38,26 @@ export class ModalComponent implements OnInit, OnDestroy {
     public service: SiteService,
     private eventEmitterService: EventEmitterService,
     private sanitizer: DomSanitizer,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: object
   ) {}
+
+  /** Caminho usado no browser (/assets/...) para pré-carregar com prioridade. */
+  private absoluteAssetUrl(path: string): string {
+    if (path.startsWith('http')) {
+      return path;
+    }
+    return path.startsWith('/') ? path : `/${path}`;
+  }
+
+  /** Dispara o download da primeira foto antes do lightbox, aproveitando cache do card. */
+  private preloadFirstGalleryImage(url: string): void {
+    if (!isPlatformBrowser(this.platformId) || !url) {
+      return;
+    }
+    const img = new Image();
+    img.src = this.absoluteAssetUrl(url);
+  }
 
   ngOnInit() {
     if (this.eventEmitterService.subsVar == undefined) {
@@ -144,11 +172,20 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.images = images;
     this.mediaItems = this.mediaItems;
 
-    setTimeout(() => {
+    const first = images[0];
+    const firstImageUrl = first?.image ?? first?.thumbImage;
+    if (typeof firstImageUrl === 'string') {
+      this.preloadFirstGalleryImage(firstImageUrl);
+    }
+
+    requestAnimationFrame(() => {
       this.showModal = true;
-      this.imageSlider?.imageOnClick(0);
       this.cdr.markForCheck();
-    }, 0);
+      requestAnimationFrame(() => {
+        this.imageSlider?.imageOnClick(0);
+        this.cdr.markForCheck();
+      });
+    });
   }
 
   /** Fecha o modal */

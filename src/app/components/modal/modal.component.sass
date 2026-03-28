@@ -3,3 +3,8 @@
     
     &.show
         display: flex
+
+    // ng-image-slider força o spinner do lightbox por 500ms (setTimeout interno).
+    // Esconder o overlay evita atraso artificial na primeira foto; o <img> ainda dispara o próprio load.
+    ::ng-deep .ng-image-fullscreen-view .pre-loader
+        display: none !important
