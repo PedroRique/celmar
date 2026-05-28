@@ -1,0 +1,75 @@
+@import '../../../assets/sass/variables'
+
+.cookie-banner
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 100001
+    background: var(--legal-bg, $black)
+    color: var(--legal-text, $white)
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25)
+    padding: 1.25rem 0
+
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 1.5rem
+        flex-wrap: wrap
+
+    &__text
+        flex: 1 1 280px
+        margin: 0
+        font-size: 0.95em
+        line-height: 1.6
+        font-weight: 300
+
+        a
+            color: var(--legal-heading, var(--brand-highlight, $bege))
+            text-decoration: underline
+
+            &:hover
+                opacity: 0.9
+
+    &__actions
+        display: flex
+        flex-shrink: 0
+        gap: 0.75rem
+        flex-wrap: wrap
+
+    &__btn
+        border: none
+        cursor: pointer
+        font-size: 0.85em
+        font-weight: bold
+        text-transform: uppercase
+        letter-spacing: 0.04em
+        padding: 0.65em 1.4em
+        transition: opacity 0.2s ease
+
+        &:hover
+            opacity: 0.9
+
+        &--primary
+            background: var(--legal-heading, var(--brand-highlight, $bege))
+            color: var(--legal-bg, $black)
+
+        &--secondary
+            background: transparent
+            color: var(--legal-text, $white)
+            border: 1px solid transparentize($white, 0.6)
+
+@media (max-width: 768px)
+    .cookie-banner
+        padding: 1rem 0
+
+        &__inner
+            flex-direction: column
+            align-items: stretch
+
+        &__actions
+            width: 100%
+
+            .cookie-banner__btn
+                flex: 1

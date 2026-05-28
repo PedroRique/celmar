@@ -2,6 +2,11 @@ import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 
+export interface PrivacyBranding {
+  companyName?: string;
+  contactEmail?: string;
+}
+
 export interface Branding {
   appTitle: string;
   logoUrl: string;
@@ -12,6 +17,7 @@ export interface Branding {
   show70Anos?: boolean;       // exibir seção dos 70 anos
   historiaVideoUrl?: string;  // URL do vídeo da história
   banners?: string[];         // array com nomes das imagens de banner
+  privacy?: PrivacyBranding;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -42,6 +48,14 @@ export class BrandingService {
 
   get banners(): string[] {
     return this.data.banners ?? ['default-banner1', 'default-banner2'];
+  }
+
+  get privacyCompanyName(): string {
+    return this.data.privacy?.companyName ?? this.data.appTitle;
+  }
+
+  get privacyContactEmail(): string | null {
+    return this.data.privacy?.contactEmail ?? null;
   }
 
   async load(): Promise<void> {
