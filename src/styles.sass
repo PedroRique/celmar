@@ -10,6 +10,9 @@
   --brand-subtitle: #666666
   --brand-highlight: #c49a6c
   --brand-link: #ffffff
+  --legal-bg: #2a2a2a
+  --legal-text: #ffffff
+  --legal-heading: #c49a6c
 
 body
   font-family: "Segoe UI", Roboto
@@ -102,3 +105,16 @@ ngx-gallery
 .mat-raised-button
   font-family: "Segoe UI", Roboto
   text-transform: uppercase
+
+// Banner de cookies (estilos globais garantem visibilidade mesmo com encapsulamento)
+app-cookie-banner
+  display: block
+  position: relative
+  z-index: 100001
+
+.cookie-banner
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 100001

@@ -42,6 +42,8 @@ import { LojaComponent } from './components/lojas/loja/loja.component';
 import { CertificatesComponent } from './components/lojas/certificates/certificates.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
+import { PoliticaPrivacidadeComponent } from './pages/politica-privacidade/politica-privacidade.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 // Pipes & Services
 import { SafeUrlPipe } from './shared/safe-url.pipe';
@@ -79,6 +81,8 @@ export function initBranding(brandingService: BrandingService) {
     CertificatesComponent,
     ContatoComponent,
     ShowroomsComponent,
+    PoliticaPrivacidadeComponent,
+    CookieBannerComponent,
     SafeUrlPipe
   ],
   imports: [

@@ -1,0 +1,80 @@
+@import '../../../assets/sass/variables'
+
+#politica-privacidade
+    background: var(--legal-bg, var(--historia-bg, #2a2a2a))
+    color: var(--legal-text, var(--historia-text, #ffffff))
+    padding: 140px 0 60px !important
+    min-height: calc(100vh - 60px)
+
+    .legal-content
+        max-width: 800px
+        margin: 0 auto
+
+    .legal-header
+        margin-bottom: 2em
+
+        h1
+            margin-bottom: 0.5em
+
+    .legal-updated
+        margin: 0
+        font-size: 0.95em
+        opacity: 0.85
+        font-weight: 300
+
+    section
+        margin-bottom: 2em
+
+        h2
+            font-size: 1.15em
+            font-weight: bold
+            text-transform: uppercase
+            color: var(--legal-heading, var(--entrevista-title, #d5a67a))
+            margin-bottom: 0.75em
+
+        p
+            line-height: 1.8
+            font-weight: 300
+            font-size: 1.05em
+            margin-bottom: 1em
+
+        ul
+            padding-left: 1.25em
+            margin-bottom: 1em
+
+            li
+                line-height: 1.8
+                font-weight: 300
+                font-size: 1.05em
+                margin-bottom: 0.5em
+
+    a
+        color: var(--legal-heading, var(--entrevista-title, #d5a67a))
+        text-decoration: underline
+
+        &:hover
+            opacity: 0.9
+
+    .legal-back
+        margin-top: 2.5em
+        padding-top: 1.5em
+        border-top: 1px solid transparentize($white, 0.85)
+
+        a
+            text-transform: uppercase
+            font-weight: bold
+            text-decoration: none
+            letter-spacing: 0.02em
+
+@media (max-width: 768px)
+    #politica-privacidade
+        padding: 120px 1em 40px !important
+
+        .legal-content
+            section
+                h2
+                    font-size: 1em
+
+                p,
+                ul li
+                    font-size: 1em

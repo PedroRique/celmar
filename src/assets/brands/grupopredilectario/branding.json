@@ -18,6 +18,13 @@
     "--entrevista-title": "#000000",
     "--entrevista-text": "#000000",
     "--footer-bg": "#523F1E",
-    "--footer-text": "#ffffff"
+    "--footer-text": "#ffffff",
+    "--legal-bg": "#523F1E",
+    "--legal-text": "#ffffff",
+    "--legal-heading": "#E6B012"
+  },
+  "privacy": {
+    "companyName": "Predilecta",
+    "contactEmail": "comercial@celmarrio.com.br"
   }
 }

@@ -18,6 +18,13 @@
     "--entrevista-title": "#d5a67a",
     "--entrevista-text": "#ffffff",
     "--footer-bg": "#4b4b4b",
-    "--footer-text": "#ffffff"
+    "--footer-text": "#ffffff",
+    "--legal-bg": "#2a2a2a",
+    "--legal-text": "#ffffff",
+    "--legal-heading": "#d5a67a"
+  },
+  "privacy": {
+    "companyName": "Celmar",
+    "contactEmail": "comercial@celmarrio.com.br"
   }
 }
