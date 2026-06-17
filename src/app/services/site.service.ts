@@ -49,6 +49,18 @@ export class SiteService {
 
   private decorados: Decorado[] = [
     {
+      nome: 'We Barra by Living - 2 Quartos',
+      id: 'we-barra-2q',
+      company: 'Living',
+      qtd: 19,
+    },
+    {
+      nome: 'We Barra by Living - 3 Quartos',
+      id: 'we-barra-3q',
+      company: 'Living',
+      qtd: 24,
+    },
+    {
       nome: 'Costa Niemeyer',
       id: 'costa-niemeyer',
       company: 'Calçada',
@@ -121,13 +133,13 @@ export class SiteService {
       qtd: 20,
     },
     {
-      nome: 'Invert Barra 3Q',
+      nome: 'Invert Barra - 3 Quartos',
       id: 'invert-barra-3q',
       company: 'Gafisa',
       qtd: 63,
     },
     {
-      nome: 'Invert Barra 4Q',
+      nome: 'Invert Barra - 4 Quartos',
       id: 'invert-barra-4q',
       company: 'Gafisa',
       qtd: 66,
@@ -225,13 +237,13 @@ export class SiteService {
       qtd: 9,
     },
     {
-      nome: 'Stadio 2Q',
+      nome: 'Stadio - 2 Quartos',
       id: 'stadio-2q',
       company: 'Calçada',
       qtd: 14,
     },
     {
-      nome: 'Stadio 3Q',
+      nome: 'Stadio - 3 Quartos',
       id: 'stadio-3q',
       company: 'Calçada',
       qtd: 23,
