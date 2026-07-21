@@ -373,6 +373,26 @@ export class SiteService {
       .catch(() => alert('Ocorreu um erro, tente novamente mais tarde.'));
   }
 
+  enviarWhatsappLead(values: {
+    nome: string;
+    sobrenome: string;
+    email: string;
+    telefone: string;
+  }): Promise<void> {
+    const { nome, sobrenome, email, telefone } = values;
+
+    return this.db
+      .list('contatos')
+      .push({
+        nome: `${nome} ${sobrenome}`.trim(),
+        email,
+        telefone,
+        bairro: '',
+        mensagem: 'Contato via botão WhatsApp',
+      })
+      .then(() => undefined);
+  }
+
   getDecorados(): Decorado[] {
     return this.decorados;
   }

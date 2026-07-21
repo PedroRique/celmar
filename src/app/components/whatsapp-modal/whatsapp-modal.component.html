@@ -1,0 +1,21 @@
+<div class="whatsapp-modal-overlay" *ngIf="showModal" (click)="onClose()">
+  <div class="whatsapp-modal" (click)="$event.stopPropagation()">
+    <button type="button" class="close-btn" (click)="onClose()" aria-label="Fechar">&times;</button>
+    <h2 class="title t-center">Fale conosco pelo WhatsApp</h2>
+    <p class="subtitle">Preencha seus dados para iniciar a conversa.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" class="form-control" placeholder="Nome" formControlName="nome" />
+      <input type="text" class="form-control" placeholder="Sobrenome" formControlName="sobrenome" />
+      <input type="email" class="form-control" placeholder="E-mail" formControlName="email" />
+      <input type="text" class="form-control" placeholder="Telefone" formControlName="telefone" />
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!form.valid || submitting"
+      >
+        {{ submitting ? 'ENVIANDO...' : 'CONTINUAR PARA O WHATSAPP' }}
+      </button>
+    </form>
+  </div>
+</div>
