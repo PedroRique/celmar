@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventEmitterService } from '../../services/event-emitter.service';
 
 @Component({
   selector: 'app-agende',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agende.component.sass']
 })
 export class AgendeComponent implements OnInit {
-  constructor() { }
+  constructor(private eventEmitterService: EventEmitterService) { }
 
   ngOnInit() { }
+
+  openWhatsappModal(event: Event) {
+    event.preventDefault();
+    this.eventEmitterService.onOpenWhatsappModal();
+  }
 }

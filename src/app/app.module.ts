@@ -41,6 +41,7 @@ import { LojasComponent } from './components/lojas/lojas.component';
 import { LojaComponent } from './components/lojas/loja/loja.component';
 import { CertificatesComponent } from './components/lojas/certificates/certificates.component';
 import { ContatoComponent } from './components/contato/contato.component';
+import { WhatsappModalComponent } from './components/whatsapp-modal/whatsapp-modal.component';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { PoliticaPrivacidadeComponent } from './pages/politica-privacidade/politica-privacidade.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
@@ -80,6 +81,7 @@ export function initBranding(brandingService: BrandingService) {
     LojaComponent,
     CertificatesComponent,
     ContatoComponent,
+    WhatsappModalComponent,
     ShowroomsComponent,
     PoliticaPrivacidadeComponent,
     CookieBannerComponent,

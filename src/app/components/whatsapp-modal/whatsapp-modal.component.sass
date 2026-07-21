@@ -1,0 +1,46 @@
+@import '../../../assets/sass/variables'
+
+.whatsapp-modal-overlay
+    position: fixed
+    inset: 0
+    z-index: 9999
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 1rem
+    background: transparentize($black, 0.4)
+
+.whatsapp-modal
+    position: relative
+    width: 100%
+    max-width: 500px
+    background: $white
+    padding: 2em
+    border-radius: 5px
+    box-shadow: 0px 0px 20px 0px transparentize($black, 0.75)
+
+    .close-btn
+        position: absolute
+        top: 0.5rem
+        right: 0.75rem
+        border: none
+        background: transparent
+        font-size: 1.75rem
+        line-height: 1
+        color: $gray
+        cursor: pointer
+
+    .title
+        margin-bottom: 0.5em
+
+    .subtitle
+        margin-bottom: 1.5em
+        color: $gray
+        text-align: center
+
+    form
+        .form-control
+            margin-bottom: 1em
+
+        .btn
+            width: 100%
