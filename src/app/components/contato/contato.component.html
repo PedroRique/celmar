@@ -2,13 +2,17 @@
   <div class="container">
     <div class="form-box">
         <h1 class="title t-center">FALE CONOSCO</h1>
-        <form action="" [formGroup]="contatoForm" (ngSubmit)="enviarEmail()">
-          <input type="text" name="nome" class="form-control" placeholder="Nome" formControlName="nome">
-          <input type="email" name="email" class="form-control" placeholder="E-mail" formControlName="email">
-          <input type="text" name="telefone" class="form-control" placeholder="Telefone" formControlName="telefone"/>
-          <input type="text" name="bairro" class="form-control" placeholder="Bairro" formControlName="bairro">
-          <textarea type="text" name="mensagem" class="form-control"  placeholder="Mensagem" formControlName="mensagem"></textarea>
-          <button [disabled]="!contatoForm.valid" class="btn btn-primary" type="submit">ENVIAR</button>
+        <form [formGroup]="contatoForm" (ngSubmit)="enviarEmail()" novalidate>
+          <input type="text" name="nome" class="form-control" placeholder="Nome" formControlName="nome" [class.is-invalid]="contatoForm.get('nome')?.invalid && contatoForm.get('nome')?.touched">
+          <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" formControlName="sobrenome" [class.is-invalid]="contatoForm.get('sobrenome')?.invalid && contatoForm.get('sobrenome')?.touched">
+          <input type="email" name="email" class="form-control" placeholder="E-mail" formControlName="email" [class.is-invalid]="contatoForm.get('email')?.invalid && contatoForm.get('email')?.touched">
+          <input type="text" name="telefone" class="form-control" placeholder="Telefone" formControlName="telefone" appPhoneMask [class.is-invalid]="contatoForm.get('telefone')?.invalid && contatoForm.get('telefone')?.touched">
+          <input type="text" name="bairro" class="form-control" placeholder="Bairro" formControlName="bairro" [class.is-invalid]="contatoForm.get('bairro')?.invalid && contatoForm.get('bairro')?.touched">
+          <textarea name="mensagem" class="form-control" placeholder="Mensagem" formControlName="mensagem" [class.is-invalid]="contatoForm.get('mensagem')?.invalid && contatoForm.get('mensagem')?.touched"></textarea>
+          <p class="form-error" *ngIf="contatoForm.invalid && contatoForm.touched">Preencha todos os campos corretamente para enviar.</p>
+          <button class="btn btn-primary" type="submit" [disabled]="submitting">
+            {{ submitting ? 'ENVIANDO...' : 'ENVIAR' }}
+          </button>
         </form>
     </div>
   </div>

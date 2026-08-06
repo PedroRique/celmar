@@ -365,12 +365,17 @@ export class SiteService {
     },
   ];
 
-  enviarEmail(values: any) {
-    this.db
+  enviarEmail(values: any): Promise<void> {
+    return this.db
       .list('contatos')
       .push(values)
-      .then(() => alert('Mensagem enviada com sucesso!'))
-      .catch(() => alert('Ocorreu um erro, tente novamente mais tarde.'));
+      .then(() => {
+        alert('Mensagem enviada com sucesso!');
+      })
+      .catch(() => {
+        alert('Ocorreu um erro, tente novamente mais tarde.');
+        throw new Error('Failed to send contact form');
+      });
   }
 
   enviarWhatsappLead(values: {

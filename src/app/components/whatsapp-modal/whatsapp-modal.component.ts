@@ -3,6 +3,7 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { SiteService } from '../../services/site.service';
+import { phoneValidator } from '../../shared/validators/phone.validator';
 
 const WHATSAPP_NUMBER = '5521964746100';
 
@@ -19,7 +20,7 @@ export class WhatsappModalComponent implements OnInit, OnDestroy {
     nome: ['', Validators.required],
     sobrenome: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    telefone: ['', Validators.required],
+    telefone: ['', [Validators.required, phoneValidator()]],
   });
 
   private subs?: Subscription;
@@ -48,24 +49,30 @@ export class WhatsappModalComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (!this.form.valid || this.submitting) {
+    if (this.form.invalid || this.submitting) {
+      this.form.markAllAsTouched();
       return;
     }
 
     this.submitting = true;
     const { nome, sobrenome, email, telefone } = this.form.value;
+    const fullName = `${nome} ${sobrenome}`.trim();
+    const message = encodeURIComponent(`Olá, meu nome é ${fullName}. Quero saber mais sobre seus móveis personalizados.`);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
 
     this.siteService
       .enviarWhatsappLead({ nome, sobrenome, email, telefone })
       .then(() => {
-        const fullName = `${nome} ${sobrenome}`.trim();
-        const message = encodeURIComponent(`Olá, meu nome é ${fullName}`);
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
-
         this.form.reset();
         this.showModal = false;
       })
-      .catch(() => alert('Ocorreu um erro, tente novamente mais tarde.'))
+      .catch(() =>
+        alert(
+          'Seus dados não puderam ser salvos, mas você pode continuar no WhatsApp.'
+        )
+      )
       .finally(() => {
         this.submitting = false;
       });

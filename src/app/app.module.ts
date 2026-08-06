@@ -45,6 +45,7 @@ import { WhatsappModalComponent } from './components/whatsapp-modal/whatsapp-mod
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { PoliticaPrivacidadeComponent } from './pages/politica-privacidade/politica-privacidade.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
+import { PhoneMaskDirective } from './shared/directives/phone-mask.directive';
 
 // Pipes & Services
 import { SafeUrlPipe } from './shared/safe-url.pipe';
@@ -85,7 +86,8 @@ export function initBranding(brandingService: BrandingService) {
     ShowroomsComponent,
     PoliticaPrivacidadeComponent,
     CookieBannerComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    PhoneMaskDirective,
   ],
   imports: [
     BrowserModule,
