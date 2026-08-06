@@ -4,15 +4,16 @@
     <h2 class="title t-center">Fale conosco pelo WhatsApp</h2>
     <p class="subtitle">Preencha seus dados para iniciar a conversa.</p>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <input type="text" class="form-control" placeholder="Nome" formControlName="nome" />
-      <input type="text" class="form-control" placeholder="Sobrenome" formControlName="sobrenome" />
-      <input type="email" class="form-control" placeholder="E-mail" formControlName="email" />
-      <input type="text" class="form-control" placeholder="Telefone" formControlName="telefone" />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <input type="text" class="form-control" placeholder="Nome" formControlName="nome" [class.is-invalid]="form.get('nome')?.invalid && form.get('nome')?.touched" />
+      <input type="text" class="form-control" placeholder="Sobrenome" formControlName="sobrenome" [class.is-invalid]="form.get('sobrenome')?.invalid && form.get('sobrenome')?.touched" />
+      <input type="email" class="form-control" placeholder="E-mail" formControlName="email" [class.is-invalid]="form.get('email')?.invalid && form.get('email')?.touched" />
+      <input type="text" class="form-control" placeholder="Telefone" formControlName="telefone" appPhoneMask [class.is-invalid]="form.get('telefone')?.invalid && form.get('telefone')?.touched" />
+      <p class="form-error" *ngIf="form.invalid && form.touched">Preencha todos os campos corretamente para continuar.</p>
       <button
         class="btn btn-primary"
         type="submit"
-        [disabled]="!form.valid || submitting"
+        [disabled]="submitting"
       >
         {{ submitting ? 'ENVIANDO...' : 'CONTINUAR PARA O WHATSAPP' }}
       </button>

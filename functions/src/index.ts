@@ -13,13 +13,14 @@ interface Contato {
   email: string;
   mensagem: string;
   nome: string;
+  sobrenome: string;
   telefone: string;
 }
 
 exports.sendEmailNotification = functions.database.ref("contatos/{contato}")
     .onCreate((snap) => {
       const data: Contato = snap.val();
-      const {bairro, email, mensagem, nome, telefone} = data;
+      const {bairro, email, mensagem, nome, sobrenome, telefone} = data;
 
       const authData = nodemailer.createTransport({
         service: "gmail",
@@ -44,12 +45,14 @@ exports.sendEmailNotification = functions.database.ref("contatos/{contato}")
         }],
         subject: "Nova mensagem do site.",
         text: `Nome: ${nome},
+              Sobrenome: ${sobrenome || ''},
               E-mail: ${email},
               Telefone: ${telefone},
               Bairro: ${bairro},
               Mensagem: ${mensagem};`,
         html: `<h2>Contato</h2>
               <h4>Nome: ${nome}</h4>
+              <h4>Sobrenome: ${sobrenome || ''}</h4>
               <h4>E-mail: ${email}</h4>
               <h4>Telefone: ${telefone}</h4>
               <h4>Bairro: ${bairro}</h4>
