@@ -1,0 +1,8 @@
+# Gallery media lives in Firebase Storage — keep it out of Vercel uploads/clones.
+src/assets/images/cases
+src/assets/images/decorados
+src/assets/images/eventos
+src/assets/images/galeria
+src/assets/images/showrooms
+src/assets/images/celmar-70-anos.mp4
+src/assets/videos
