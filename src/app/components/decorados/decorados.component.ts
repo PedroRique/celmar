@@ -3,6 +3,7 @@ import { SiteService } from '../../services/site.service';
 import { Router } from '@angular/router';
 // import { ModalComponent } from '../../app/modal/modal.component';
 import { EventEmitterService } from '../../services/event-emitter.service';
+import { mediaBgUrl } from '../../core/media-url';
 
 export interface Decorado {
   nome: string;
@@ -31,7 +32,7 @@ export class DecoradosComponent implements OnInit {
   }
 
   getBg(id: string){
-    return `url(../../assets/images/decorados/${id}/1.jpg)`;
+    return mediaBgUrl(`images/decorados/${id}/1.jpg`);
   }
 
   abreDecorado(id:string){

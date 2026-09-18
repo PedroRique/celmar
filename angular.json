@@ -42,6 +42,23 @@
           },
           "configurations": {
             "production": {
+              "assets": [
+                "src/favicon.png",
+                {
+                  "glob": "**/*",
+                  "input": "src/assets",
+                  "output": "/assets",
+                  "ignore": [
+                    "images/cases/**",
+                    "images/decorados/**",
+                    "images/eventos/**",
+                    "images/galeria/**",
+                    "images/showrooms/**",
+                    "images/celmar-70-anos.mp4",
+                    "videos/**"
+                  ]
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",

@@ -8,5 +8,9 @@ export const environment = {
     authDomain: 'celmarrio.firebaseapp.com',
     messagingSenderId: '836646201453',
   },
+  /** Public Firebase Storage object URL prefix (path is URI-encoded after this). */
+  mediaBaseUrl: 'https://firebasestorage.googleapis.com/v0/b/celmarrio.appspot.com/o/',
+  /** When true, serve gallery media from local assets/ (dev only). */
+  useLocalMedia: false,
   production: true
 };

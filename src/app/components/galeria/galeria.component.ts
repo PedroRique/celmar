@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery-images-video';
+import { mediaUrl } from '../../core/media-url';
 
 @Component({
   selector: 'app-galeria',
@@ -27,7 +28,7 @@ export class GaleriaComponent implements OnInit {
     this.imagesGaleria = ['banho_abruzzo', 'cozinha_navero', 'final_dormitorio', 'gourmet_marsala', 'gourmet', 'home_york', 'lavanderia', 'curva_rgb', 'dorm_verona', 'closet_amendoa', 'cozinha_rgb', 'gourmet_personal', 'office_lineo'];
 
     this.galleryImages = this.imagesGaleria.map(image => {
-      let imgStr = 'assets/images/galeria/' + image + '.jpg';
+      const imgStr = mediaUrl(`images/galeria/${image}.jpg`);
 
       return {
         small: imgStr,

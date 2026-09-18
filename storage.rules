@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Gallery images and videos (public read)
+    match /media/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Store certificates (public read; uploads via Admin SDK / Console)
+    match /certificates/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

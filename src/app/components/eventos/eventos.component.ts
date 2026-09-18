@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { SiteService } from '../../services/site.service';
+import { mediaBgUrl } from '../../core/media-url';
 
 export interface Event {
   nome: string;
@@ -45,7 +46,7 @@ export class EventosComponent implements OnInit {
 
   /** Retorna a imagem de fundo do evento */
   getBg(id: string) {
-    return `url(../../assets/images/eventos/${id}/1.jpg)`;
+    return mediaBgUrl(`images/eventos/${id}/1.jpg`);
   }
 
   /** Abre modal de evento */
