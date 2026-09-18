@@ -49,3 +49,12 @@ Thumbs.db
 serviceAccount*.json
 .env
 functions/.env
+
+# Gallery media hosted on Firebase Storage (keep local copies; do not track in Git)
+/src/assets/images/cases/
+/src/assets/images/decorados/
+/src/assets/images/eventos/
+/src/assets/images/galeria/
+/src/assets/images/showrooms/
+/src/assets/images/celmar-70-anos.mp4
+/src/assets/videos/
