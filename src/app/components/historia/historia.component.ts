@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BrandingService } from 'src/app/core/branding.service';
+import { mediaUrl } from 'src/app/core/media-url';
 
 @Component({
   selector: 'app-historia',
@@ -7,6 +8,8 @@ import { BrandingService } from 'src/app/core/branding.service';
   styleUrls: ['./historia.component.sass']
 })
 export class HistoriaComponent {
+  readonly video70AnosUrl = mediaUrl('images/celmar-70-anos.mp4');
+
   constructor(public brandingService: BrandingService) {}
 
   get historia(): string {

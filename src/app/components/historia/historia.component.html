@@ -23,7 +23,7 @@
     <div class="texto-video reverse" *ngIf="show70Anos">
       <div>
         <video width="560" height="315" controls>
-          <source src="assets/images/celmar-70-anos.mp4" type="video/mp4" />
+          <source [src]="video70AnosUrl" type="video/mp4" />
           Seu navegador não suporta a tag de vídeo.
         </video>
       </div>

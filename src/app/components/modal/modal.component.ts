@@ -13,6 +13,7 @@ import { SiteService } from '../../services/site.service';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { NgImageSliderComponent } from 'ng-image-slider';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { mediaUrl } from '../../core/media-url';
 
 interface MediaItem {
   type: 'image' | 'video' | 'youtube';
@@ -121,7 +122,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
     // Adiciona imagens PRIMEIRO (carregam rápido)
     for (let i = 1; i <= g.qtd; i++) {
-      const imgStr = `assets/images/${gallery.type}/${g.id}/${i}.jpg`;
+      const imgStr = mediaUrl(`images/${gallery.type}/${g.id}/${i}.jpg`);
       images.push({ image: imgStr, thumbImage: imgStr });
       this.mediaItems.push({
         type: 'image',
@@ -160,7 +161,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     // Adiciona vídeos locais depois (compatibilidade com formato anterior)
     if (g.qtdVideo && !g.videoUrls) {
       for (let i = 1; i <= g.qtdVideo; i++) {
-        const vidStr = `assets/videos/${gallery.type}/${g.id}/${i}.mp4`;
+        const vidStr = mediaUrl(`videos/${gallery.type}/${g.id}/${i}.mp4`);
         images.push({ video: vidStr });
         this.mediaItems.push({
           type: 'video',

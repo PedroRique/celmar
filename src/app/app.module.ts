@@ -11,6 +11,8 @@ import { SwiperModule } from 'swiper/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -111,6 +113,8 @@ export function initBranding(brandingService: BrandingService) {
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
   ],
   providers: [
     SiteService,

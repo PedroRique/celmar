@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SiteService } from '../../services/site.service';
 import { Router } from '@angular/router';
 import { EventEmitterService } from '../../services/event-emitter.service';
+import { mediaBgUrl } from '../../core/media-url';
 
 export interface Showroom {
   nome: string;
@@ -27,7 +28,7 @@ export class ShowroomsComponent implements OnInit {
   }
 
   getBg(id: string){
-    return `url(../../assets/images/showrooms/${id}/1.jpg)`;
+    return mediaBgUrl(`images/showrooms/${id}/1.jpg`);
   }
 
   abreShowroom(id: string){

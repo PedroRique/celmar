@@ -4,6 +4,7 @@ import { EventEmitterService } from 'src/app/services/event-emitter.service';
 import { SlugifyPipe } from '../../../shared/pipes/slugify.pipe';
 import { CertificatesComponent } from '../certificates/certificates.component';
 import { Endereco } from '../lojas.component';
+import { mediaBgUrl } from '../../../core/media-url';
 
 @Component({
   selector: 'app-loja',
@@ -43,6 +44,6 @@ export class LojaComponent implements OnInit {
   }
 
   public getBg(): string {
-    return `url(../../../assets/images/showrooms/${this.lojaId}/1.jpg)`;
+    return mediaBgUrl(`images/showrooms/${this.lojaId}/1.jpg`);
   }
 }
