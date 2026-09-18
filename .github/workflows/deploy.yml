@@ -31,6 +31,9 @@ jobs:
         npm run build --prod  # ou 'ng build --prod' se preferir usar o CLI do Angular diretamente
 
     # Passo 5: Deploy via FTP usando a ação SamKirkland/FTP-Deploy-Action
+    # Exclude legacy media folders so FTP does not try to delete ~445MB of
+    # server-only gallery files (that now live in Firebase Storage). Deleting
+    # those folders caused FTP 550 and aborted the deploy mid-sync.
     - name: Deploy to FTP Server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -41,3 +44,10 @@ jobs:
         server-dir: Web/  # Pasta no servidor onde os arquivos serão enviados
         exclude: |
           **/celmar/**
+          **/assets/images/cases/**
+          **/assets/images/decorados/**
+          **/assets/images/eventos/**
+          **/assets/images/galeria/**
+          **/assets/images/showrooms/**
+          **/assets/images/celmar-70-anos.mp4
+          **/assets/videos/**
