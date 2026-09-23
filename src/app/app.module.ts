@@ -46,6 +46,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { PoliticaPrivacidadeComponent } from './pages/politica-privacidade/politica-privacidade.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
+import { OrcamentoCtaComponent } from './components/orcamento-cta/orcamento-cta.component';
 import { PhoneMaskDirective } from './shared/directives/phone-mask.directive';
 
 // Pipes & Services
@@ -86,6 +87,7 @@ export function initBranding(brandingService: BrandingService) {
     ShowroomsComponent,
     PoliticaPrivacidadeComponent,
     CookieBannerComponent,
+    OrcamentoCtaComponent,
     SafeUrlPipe,
     PhoneMaskDirective,
   ],

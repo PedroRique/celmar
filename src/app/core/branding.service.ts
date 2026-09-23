@@ -9,6 +9,7 @@ export interface PrivacyBranding {
 
 export interface Branding {
   appTitle: string;
+  pageTitle?: string;
   logoUrl: string;
   faviconUrl: string;
   theme?: Record<string, string>;
@@ -61,34 +62,40 @@ export class BrandingService {
   async load(): Promise<void> {
     const hostRaw = window.location.hostname.toLowerCase();
     const host = hostRaw.replace(/^www\./, '');
-
-    const map: Record<string, string> = {
-      'localhost': 'default',
-      '127.0.0.1': 'default',
-      'celmarrio.com.br': 'celmarrio',
-      'celmarrio.local': 'celmarrio',
-      'celmarrio.localhost': 'celmarrio',
-      'grupopredilectario.com.br': 'grupopredilectario',
-      'grupopredilectario.local': 'grupopredilectario',
-      'grupopredilectario.localhost': 'grupopredilectario'
-    };
-
-    const key = map[host] ?? 'default';
+    const key = this.resolveBrandKey(host);
     const url = `/assets/brands/${key}/branding.json`;
 
     try {
       const res = await fetch(url, { cache: 'no-store' });
-      this.data = res.ok ? await res.json() : await this.defaultBranding();
+      this.data = res.ok ? await res.json() : await this.defaultBranding(key);
     } catch {
-      this.data = await this.defaultBranding();
+      this.data = await this.defaultBranding(key);
     }
 
     this.apply();
   }
 
-  private async defaultBranding(): Promise<Branding> {
+  private resolveBrandKey(host: string): string {
+    if (host.includes('predilect')) {
+      return 'grupopredilectario';
+    }
+    if (host.includes('celmar')) {
+      return 'celmarrio';
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const brand = (params.get('brand') ?? '').toLowerCase();
+    if (brand.includes('predilect')) {
+      return 'grupopredilectario';
+    }
+
+    return 'celmarrio';
+  }
+
+  private async defaultBranding(key = 'celmarrio'): Promise<Branding> {
     return {
-      appTitle: 'App',
+      appTitle: key === 'grupopredilectario' ? 'Predilecta' : 'Celmar',
+      pageTitle: key === 'grupopredilectario' ? 'Grupo Predilecta Rio' : 'Celmar Rio',
       logoUrl: '/assets/brands/default/logo.svg',
       faviconUrl: '/assets/brands/default/favicon.png',
       theme: {
@@ -102,7 +109,8 @@ export class BrandingService {
   }
 
   private apply(): void {
-    this.title.setTitle(this.data.appTitle);
+    const pageTitle = this.data.pageTitle ?? this.data.appTitle;
+    this.title.setTitle(pageTitle);
 
     let link = this.doc.querySelector("link[rel*='icon']") as HTMLLinkElement | null;
     if (!link) {
@@ -121,7 +129,7 @@ export class BrandingService {
       this.doc.documentElement.style.setProperty(key, value);
     });
 
-    this.meta.updateTag({ name: 'og:title', content: this.data.appTitle });
-    this.meta.updateTag({ name: 'twitter:title', content: this.data.appTitle });
+    this.meta.updateTag({ name: 'og:title', content: pageTitle });
+    this.meta.updateTag({ name: 'twitter:title', content: pageTitle });
   }
 }

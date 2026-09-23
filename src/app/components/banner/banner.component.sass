@@ -1,14 +1,78 @@
 @import '../../../assets/sass/variables'
 
+#banner
+    position: relative
+    @media (max-width: 768px)
+        height: var(--banner-height, 100dvh)
+
 .banner-swipper
     width: 100%
     height: calc(80vh - 50px)
     --swiper-navigation-color: #2a2a2a
     --swiper-pagination-color: #2a2a2a
     @media (max-width: 768px)
-        height: calc(50vh - 50px)
+        height: 100%
 
-img
-    width: 100%
-    height: 100%
-    object-fit: cover
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.banner-hero
+    position: absolute
+    inset: 0
+    z-index: 2
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 6em 1.5em 3em
+    pointer-events: none
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.52) 48%, rgba(0, 0, 0, 0.32) 100%)
+
+    .title
+        color: #fff
+        font-size: 2.4em
+        line-height: 1.55
+        margin: 0 0 0.85em
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45)
+
+    .subtitle
+        color: #fff
+        font-size: 1.15em
+        margin: 0 0 2.75em
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4)
+
+    .banner-cta
+        pointer-events: auto
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        background: var(--legal-heading, var(--brand-highlight, $bege))
+        color: #1a1a1a
+        border: none
+        border-radius: 0
+        padding: 0.75em 1.5em
+        font-family: "Segoe UI", Roboto
+        font-size: 0.9em
+        font-weight: bold
+        letter-spacing: 0.04em
+        text-transform: uppercase
+        text-decoration: none
+        transition: opacity 0.2s ease
+
+        &:hover
+            color: #1a1a1a
+            opacity: 0.9
+
+@media (max-width: 768px)
+    .banner-hero
+        padding: 5.5em 1.25em 2em
+
+        .title
+            font-size: 1.6em
+
+        .subtitle
+            font-size: 0.85em
+            margin-bottom: 2.25em
