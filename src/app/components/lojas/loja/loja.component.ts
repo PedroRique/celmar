@@ -4,7 +4,7 @@ import { EventEmitterService } from 'src/app/services/event-emitter.service';
 import { SlugifyPipe } from '../../../shared/pipes/slugify.pipe';
 import { CertificatesComponent } from '../certificates/certificates.component';
 import { Endereco } from '../lojas.component';
-import { mediaBgUrl } from '../../../core/media-url';
+import { mediaUrl } from '../../../core/media-url';
 
 @Component({
   selector: 'app-loja',
@@ -15,6 +15,7 @@ export class LojaComponent implements OnInit {
   @Input() public endereco!: Endereco;
 
   public lojaId = '';
+  public telefones: { label: string; href: string }[] = [];
 
   constructor(
     private slugifyPipe: SlugifyPipe,
@@ -26,6 +27,7 @@ export class LojaComponent implements OnInit {
     this.lojaId = this.slugifyPipe.transform(
       `${this.endereco.empresa} ${this.endereco.nome}`
     );
+    this.telefones = this.parseTelefones(this.endereco.telefone);
   }
 
   public openMap(link: string): void {
@@ -43,7 +45,34 @@ export class LojaComponent implements OnInit {
     });
   }
 
-  public getBg(): string {
-    return mediaBgUrl(`images/showrooms/${this.lojaId}/1.jpg`);
+  public getCoverUrl() {
+    return mediaUrl(`images/showrooms/${this.lojaId}/1.jpg`);
+  }
+
+  public parseTelefones(telefone: string): { label: string; href: string }[] {
+    return (telefone || '')
+      .split(/\s*[|\/;]\s*/)
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((label) => ({
+        label,
+        href: this.getTelHref(label),
+      }))
+      .filter((item) => item.href);
+  }
+
+  public getTelHref(telefone: string): string {
+    const digits = (telefone || '').replace(/\D/g, '');
+    if (!digits) {
+      return '';
+    }
+
+    const withCountry = digits.startsWith('55') ? digits : `55${digits}`;
+    return `tel:+${withCountry}`;
+  }
+
+  public getEmailHref(email: string): string {
+    const value = (email || '').trim();
+    return value ? `mailto:${value}` : '';
   }
 }

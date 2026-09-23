@@ -310,7 +310,7 @@ export class SiteService {
       empresas: ['celmar', 'predilecta'],
     },
     {
-      nome: 'Morar Mais',
+      nome: 'Morar Mais 2019',
       id: 'morar-mais',
       qtd: 45,
       description: 'Mostra de decoração Morar Mais por Menos 2019',
@@ -376,26 +376,6 @@ export class SiteService {
         alert('Ocorreu um erro, tente novamente mais tarde.');
         throw new Error('Failed to send contact form');
       });
-  }
-
-  enviarWhatsappLead(values: {
-    nome: string;
-    sobrenome: string;
-    email: string;
-    telefone: string;
-  }): Promise<void> {
-    const { nome, sobrenome, email, telefone } = values;
-
-    return this.db
-      .list('contatos')
-      .push({
-        nome: `${nome} ${sobrenome}`.trim(),
-        email,
-        telefone,
-        bairro: '',
-        mensagem: 'Contato via botão WhatsApp',
-      })
-      .then(() => undefined);
   }
 
   getDecorados(): Decorado[] {

@@ -17,11 +17,10 @@
   <app-footer></app-footer>
 
   <div class="wpp-button">
-    <a href="#" (click)="openWhatsappModal($event)"
+    <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer"
       ><img src="../../assets/images/wpp.png" alt="WhatsApp Botão"
     /></a>
   </div>
 </div>
 
 <app-modal></app-modal>
-<app-whatsapp-modal></app-whatsapp-modal>

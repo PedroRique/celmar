@@ -8,9 +8,9 @@
     <div class="case-box" *ngFor="let case of cases">
       <div
         class="case-box-cover"
-        [ngStyle]="{ 'background-image': getBg(case.id) }"
         (click)="abreCase(case.id)"
       >
+        <img class="cover-img" [src]="getCoverUrl(case.id)" [alt]="case.nome" />
         <div class="veja-mais">
           <h2>
             Veja <br />

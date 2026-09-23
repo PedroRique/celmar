@@ -3,7 +3,7 @@ import { SiteService } from '../../services/site.service';
 import { Router } from '@angular/router';
 // import { ModalComponent } from '../../app/modal/modal.component';
 import { EventEmitterService } from '../../services/event-emitter.service';
-import { mediaBgUrl } from '../../core/media-url';
+import { mediaUrl } from '../../core/media-url';
 
 export interface Decorado {
   nome: string;
@@ -24,15 +24,19 @@ export class DecoradosComponent implements OnInit {
 
   public showNumber = 4;
 
-  constructor(public service: SiteService, private router: Router, private eventEmitterService: EventEmitterService) {
+  constructor(
+    public service: SiteService,
+    private router: Router,
+    private eventEmitterService: EventEmitterService
+  ) {
     this.decorados = this.service.getDecorados();
   }
 
   ngOnInit() {
   }
 
-  getBg(id: string){
-    return mediaBgUrl(`images/decorados/${id}/1.jpg`);
+  getCoverUrl(id: string) {
+    return mediaUrl(`images/decorados/${id}/1.jpg`);
   }
 
   abreDecorado(id:string){

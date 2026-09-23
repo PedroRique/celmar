@@ -7,7 +7,6 @@ import { Subscription } from 'rxjs';
 export class EventEmitterService {
 
   invokeGallery = new EventEmitter();
-  invokeWhatsappModal = new EventEmitter();
   subsVar: Subscription | undefined;
 
   constructor() { }
@@ -15,9 +14,5 @@ export class EventEmitterService {
   onOpenGallery(id:string, type:string) {
     let gallery = { id, type };
     this.invokeGallery.emit(gallery);
-  }
-
-  onOpenWhatsappModal() {
-    this.invokeWhatsappModal.emit();
   }
 }

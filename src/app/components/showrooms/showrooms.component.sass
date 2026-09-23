@@ -20,13 +20,20 @@
             flex: 0 1 25%
             margin-bottom: 3em
             padding: 0px 15px
-            background-clip: content-box
-            background-position: center
-            background-repeat: no-repeat
-            background-size: cover
             overflow: hidden
             position: relative
             cursor: pointer
+
+            .cover-img
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 15px
+                right: 15px
+                width: auto
+                height: 100%
+                object-fit: cover
+                z-index: 0
 
             h1
                 text-transform: uppercase
@@ -36,6 +43,8 @@
                 text-shadow: 0px 0px 5px black
                 font-size: 1.5em
                 transition: 0.3s ease
+                position: relative
+                z-index: 1
 
             .veja-mais
                 background: transparentize($white, 0.1)
@@ -50,6 +59,7 @@
                 left: 50%
                 width: 80%
                 height: 90%
+                z-index: 1
 
                 h2
                     color: $black
