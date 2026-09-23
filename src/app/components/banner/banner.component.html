@@ -1,7 +1,13 @@
-<div id="banner">
+<div id="banner" [style.--banner-height]="bannerHeight">
   <swiper [config]="config" class="banner-swipper">
     <ng-template swiperSlide *ngFor="let banner of banners">
       <img [src]="banner" alt="Banner image" />
     </ng-template>
   </swiper>
+
+  <div class="banner-hero">
+    <h1 class="title">O ambiente dos<br>seus sonhos<br>feitos sob medida</h1>
+    <p class="subtitle">Marca pioneira na fabricação de móveis planejados</p>
+    <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="banner-cta">Solicitar orçamento</a>
+  </div>
 </div>

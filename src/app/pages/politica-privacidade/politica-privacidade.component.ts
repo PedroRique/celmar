@@ -15,7 +15,7 @@ export class PoliticaPrivacidadeComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle(
-      `${this.branding.branding.appTitle} — Política de Privacidade`
+      `${this.branding.branding.pageTitle ?? this.branding.branding.appTitle} — Política de Privacidade`
     );
   }
 }
