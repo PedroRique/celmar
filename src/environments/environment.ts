@@ -15,7 +15,7 @@ export const environment = {
   /** Public Firebase Storage object URL prefix (path is URI-encoded after this). */
   mediaBaseUrl: 'https://firebasestorage.googleapis.com/v0/b/celmarrio.appspot.com/o/',
   /** When true, serve gallery media from local assets/ (dev only). */
-  useLocalMedia: true,
+  useLocalMedia: false,
   production: false
 };
 

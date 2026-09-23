@@ -1,5 +1,7 @@
 <div class="loja-container">
-  <div class="loja-bg" [ngStyle]="{ 'background-image': getBg() }"></div>
+  <div class="loja-bg">
+    <img [src]="getCoverUrl()" [alt]="endereco.nome" />
+  </div>
   <div class="loja-info">
     <h4>{{ endereco.empresa }}</h4>
     <h1>
@@ -7,8 +9,19 @@
     </h1>
 
     <p><i class="fas fa-map-marker-alt"></i>{{ endereco.endereco }}</p>
-    <p><i class="fa fa-phone"></i> {{ endereco.telefone }}</p>
-    <p><i class="fa fa-envelope"></i> {{ endereco.email }}</p>
+    <p *ngIf="telefones.length" class="telefones">
+      <i class="fa fa-phone"></i>
+      <ng-container *ngFor="let phone of telefones; let last = last">
+        <span class="telefone-text">{{ phone.label }}</span>
+        <a class="telefone-link" [href]="phone.href">{{ phone.label }}</a>
+        <ng-container *ngIf="!last"> | </ng-container>
+      </ng-container>
+    </p>
+    <p>
+      <a [href]="getEmailHref(endereco.email)">
+        <i class="fa fa-envelope"></i> {{ endereco.email }}
+      </a>
+    </p>
     <div class="actions">
       <button (click)="openPhotos()">Ver fotos</button>
       <button (click)="openMap(endereco.mapa)">Ver no mapa</button>

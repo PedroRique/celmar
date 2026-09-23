@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitterService } from '../../services/event-emitter.service';
 import { SiteService } from '../../services/site.service';
-import { mediaBgUrl } from '../../core/media-url';
+import { mediaUrl } from '../../core/media-url';
 
 export interface Case {
   nome: string;
@@ -29,8 +29,8 @@ export class CasesComponent implements OnInit {
 
   ngOnInit() {}
 
-  getBg(id: string) {
-    return mediaBgUrl(`images/cases/${id}/1.jpg`);
+  getCoverUrl(id: string) {
+    return mediaUrl(`images/cases/${id}/1.jpg`);
   }
 
   abreCase(id: string) {

@@ -1,21 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { EventEmitterService } from '../services/event-emitter.service';
+import { Component } from '@angular/core';
+import { WHATSAPP_URL } from '../core/whatsapp';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-
-  constructor(private eventEmitterService: EventEmitterService) {
-  }
-
-  ngOnInit() {
-  }
-
-  openWhatsappModal(event: Event) {
-    event.preventDefault();
-    this.eventEmitterService.onOpenWhatsappModal();
-  }
+export class HomeComponent {
+  readonly whatsappUrl = WHATSAPP_URL;
 }

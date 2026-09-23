@@ -8,9 +8,9 @@
     <div class="evento-box" *ngFor="let event of events">
       <div
         class="evento-box-cover"
-        [ngStyle]="{ 'background-image': getBg(event.id) }"
         (click)="abreEvento(event.id)"
       >
+        <img class="cover-img" [src]="getCoverUrl(event.id)" [alt]="event.nome" />
         <div class="veja-mais">
           <h2>
             Veja <br />
