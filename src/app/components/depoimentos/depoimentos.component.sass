@@ -2,6 +2,8 @@
 
 #depoimentos
     padding: 80px 0px !important
+    overflow-x: clip
+    max-width: 100%
     .dep-title
         display: none
     .dep-title-2
@@ -10,7 +12,10 @@
         display: flex
         align-items: center
         justify-content: space-around
+        max-width: 100%
         .dep-video
+            flex: 0 0 auto
+            max-width: 100%
             display: flex
             align-items: center
             justify-content: center
@@ -30,12 +35,44 @@
                 align-self: stretch
                 background: #e6e6e6
 
+    .dep-lista
+        flex: 1
+        min-width: 0
+        max-width: 100%
+
     .subtitle
-        margin-bottom: 2em
+        margin-bottom: 1.2em
+
+    .google-summary
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        gap: 0.55em 0.8em
+        margin-bottom: 1.4em
+        .score
+            color: $bege
+            font-size: 2em
+            font-weight: 600
+            line-height: 1
+        .count
+            font-size: 0.95em
+        a
+            color: $bege
+        .store-links
+            display: flex
+            flex-wrap: wrap
+            gap: 0.35em 0.9em
+
+    .stars
+        color: #f4b400
+        letter-spacing: 2px
 
     .depoimentos-swiper
         --swiper-navigation-color: #2a2a2a
         --swiper-pagination-color: #2a2a2a
+        max-width: 100%
+        overflow: hidden
+        padding-bottom: 2.4em
 
         .depoimento-inner
             display: flex
@@ -46,12 +83,33 @@
                 color: $bege
                 text-transform: uppercase
                 font-size: 1.5em
+                a
+                    color: inherit
+                    text-decoration: none
             img
                 border-radius: 50%
                 width: 120px
+                height: 120px
+                object-fit: cover
                 margin-bottom: 1em
             p
                 margin-bottom: 0
+                max-height: 9.5em
+                overflow-y: auto
+                overflow-wrap: break-word
+            p.stars,
+            p.meta
+                max-height: none
+                overflow: visible
+            p.stars
+                margin: 0.15em 0 0.45em
+            p.meta
+                margin-top: 0.7em
+                font-size: 0.85em
+                opacity: 0.75
+                a
+                    color: $bege
+                    opacity: 1
 
 @media (max-width: 768px)
     #depoimentos

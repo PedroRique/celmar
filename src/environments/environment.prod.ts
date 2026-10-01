@@ -12,5 +12,6 @@ export const environment = {
   mediaBaseUrl: 'https://firebasestorage.googleapis.com/v0/b/celmarrio.appspot.com/o/',
   /** When true, serve gallery media from local assets/ (dev only). */
   useLocalMedia: false,
+  googleReviewsUrl: 'https://us-central1-celmarrio.cloudfunctions.net/googleReviews',
   production: true
 };

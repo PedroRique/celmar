@@ -2,9 +2,12 @@ import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import * as nodemailer from "nodemailer";
 import * as dotenv from "dotenv";
+import {googleReviews} from "./google-reviews";
 
 admin.initializeApp();
 dotenv.config();
+
+exports.googleReviews = googleReviews;
 
 const {SENDER_EMAIL, SENDER_PASSWORD} = process.env;
 
@@ -45,14 +48,14 @@ exports.sendEmailNotification = functions.database.ref("contatos/{contato}")
         }],
         subject: "Nova mensagem do site.",
         text: `Nome: ${nome},
-              Sobrenome: ${sobrenome || ''},
+              Sobrenome: ${sobrenome || ""},
               E-mail: ${email},
               Telefone: ${telefone},
               Bairro: ${bairro},
               Mensagem: ${mensagem};`,
         html: `<h2>Contato</h2>
               <h4>Nome: ${nome}</h4>
-              <h4>Sobrenome: ${sobrenome || ''}</h4>
+              <h4>Sobrenome: ${sobrenome || ""}</h4>
               <h4>E-mail: ${email}</h4>
               <h4>Telefone: ${telefone}</h4>
               <h4>Bairro: ${bairro}</h4>
