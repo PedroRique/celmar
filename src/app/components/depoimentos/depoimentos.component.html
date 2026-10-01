@@ -14,18 +14,43 @@
         <div class="line-div"></div>
       </div>
   
-      <div style="width: 100%">
+      <div class="dep-lista">
         <div class="dep-title-2">
           <h1 class="title">DEPOIMENTOS</h1>
           <h3 class="subtitle">nosso principal <b>objetivo</b> é a sua <b>satisfação</b></h3>
         </div>
-        <swiper [config]="config" class="depoimentos-swiper">
+        <div class="google-summary" *ngIf="summary">
+          <span class="score">{{ formatRating(summary.rating) }}</span>
+          <span class="stars" [attr.aria-label]="formatRating(summary.rating) + ' de 5'">
+            <i *ngFor="let star of stars(summary.rating)" [ngClass]="starClass(star)"></i>
+          </span>
+          <span class="count">{{ summary.total }} avaliações no Google</span>
+          <a *ngIf="summary.mapsUrl && lojasGoogle.length < 2" [href]="summary.mapsUrl" target="_blank" rel="noopener noreferrer">Ver no Google</a>
+          <span class="store-links" *ngIf="lojasGoogle.length > 1">
+            <a *ngFor="let loja of lojasGoogle" [href]="loja.mapsUrl" target="_blank" rel="noopener noreferrer">{{ loja.nome }}</a>
+          </span>
+        </div>
+        <swiper *ngIf="swiperVisible" [config]="config" class="depoimentos-swiper">
             <ng-template swiperSlide *ngFor="let dep of depoimentos">
               <div class="depoimento-inner">
-                <img src="../../assets/images/avatar.jpg">
+                <img [src]="dep.foto || 'assets/images/avatar.jpg'" [alt]="dep.nome" (error)="onPhotoError($event)">
                 <div>
-                    <h1>{{dep.nome}}</h1>
-                    <p>{{dep.texto}}</p>
+                    <h1>
+                      <a *ngIf="dep.autorUrl" [href]="dep.autorUrl" target="_blank" rel="noopener noreferrer">{{ dep.nome }}</a>
+                      <ng-container *ngIf="!dep.autorUrl">{{ dep.nome }}</ng-container>
+                    </h1>
+                    <p class="stars" *ngIf="dep.nota != null" [attr.aria-label]="(dep.nota || 0) + ' de 5'">
+                      <i *ngFor="let star of stars(dep.nota || 0)" [ngClass]="starClass(star)"></i>
+                    </p>
+                    <p *ngIf="dep.texto">{{ dep.texto }}</p>
+                    <p class="meta" *ngIf="dep.loja || dep.tempo || dep.mapsUrl">
+                      <a *ngIf="dep.loja && dep.mapsUrl" [href]="dep.mapsUrl" target="_blank" rel="noopener noreferrer">{{ dep.loja }}</a>
+                      <span *ngIf="dep.loja && !dep.mapsUrl">{{ dep.loja }}</span>
+                      <span *ngIf="dep.loja && dep.tempo"> · </span>
+                      <span *ngIf="dep.tempo">{{ dep.tempo }}</span>
+                      <span *ngIf="dep.mapsUrl && lojasGoogle.length > 1 && (dep.loja || dep.tempo)"> · </span>
+                      <a *ngIf="dep.mapsUrl && lojasGoogle.length > 1" [href]="dep.mapsUrl" target="_blank" rel="noopener noreferrer">Ver no Google</a>
+                    </p>
                 </div>
               </div>
             </ng-template>
